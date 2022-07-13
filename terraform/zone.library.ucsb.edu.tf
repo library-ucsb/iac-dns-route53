@@ -594,22 +594,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.51"]
 }
 
-resource "aws_route53_record" "lists-library-ucsb-edu-TXT" {
-zone_id = local.library-zone_id
-  name    = "lists.library.ucsb.edu."
-  type    = "TXT"
-  ttl     = "10800"
-  records = ["v=spf1 a mx include:_spf.ucsb.edu ~all"]
-}
-
-resource "aws_route53_record" "lists-library-ucsb-edu-MX" {
-zone_id = local.library-zone_id
-  name    = "lists.library.ucsb.edu."
-  type    = "MX"
-  ttl     = "60"
-  records = ["10 lists.connect.ucsb.edu."]
-}
-
 resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "license-2019.library.ucsb.edu."
@@ -1146,14 +1130,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "collabsecrets-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "collabsecrets.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "classes-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "classes.library.ucsb.edu."
@@ -1218,14 +1194,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "bops-remote-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "bops-remote.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.97.211"]
-}
-
 resource "aws_route53_record" "blackfeminism-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "blackfeminism.library.ucsb.edu."
@@ -1234,9 +1202,9 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "bastion-ucsb-lib-1-library-ucsb-edu-A" {
+resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
-  name    = "bastion-ucsb-lib-1.library.ucsb.edu."
+  name    = "dhcp-servers-1.library.ucsb.edu."
   type    = "A"
   ttl     = "10800"
   records = ["128.111.87.42"]
@@ -1306,14 +1274,6 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "arcgis1-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "arcgis1.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.224"]
-}
-
 resource "aws_route53_record" "arc-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
@@ -1344,14 +1304,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["rssh-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "akebono-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "akebono.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "adrl-sandbox-library-ucsb-edu-A" {
