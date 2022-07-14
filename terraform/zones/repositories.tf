@@ -1,8 +1,7 @@
 
 module "module-library_workspace" {
-  source  = "app.terraform.io/library-ucsb-core/module-library_workspace/tfc"
-  version = "0.0.7"
-  # insert required variables here
+  source                = "github.com/library-ucsb/terraform-tfc-module-library_workspace"
+
   name                  = var.repo.name
   description           = var.repo.description
   tfc_organization      = var.repo.tfc_organization
