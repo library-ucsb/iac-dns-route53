@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "route53_role_trust_policy" {
     principals {
       type                          = "AWS"
       #identifiers                   = [aws_iam_group.route53_admin.arn]
-      identifiers                   = [ "arn:aws:iam::${data.aw  }:root"]
+      identifiers                   = ["arn:aws:iam::${data.aws_caller_identity.source.account_id}:root"]
     }
   }
 }
@@ -63,6 +63,7 @@ data "aws_iam_policy_document" "route53_policy_full_access" {
         ]
         resources = ["*"]
     }
+    
     statement {
         effect = "Allow"
         actions = [
