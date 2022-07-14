@@ -3,8 +3,11 @@
 name: "terraform: initialize and plan - aws_r53_hosted_zones"
 on:
   push:
+    branches:
+      - dev
+      - dev-**
     paths:
-      - "terraform/zones/**"
+      - "terraform/*"
     #paths-ignore:
     
 jobs:
