@@ -1,10 +1,12 @@
 
 
-name: "terraform: initialize and plan"
+name: "terraform: initialize and plan - aws_r53_hosted_zones"
 on:
   push:
     branches-ignore:
       - 'main'
+    paths:
+      - "terraform/zones/**"
     #paths-ignore:
     
 jobs:
@@ -22,9 +24,11 @@ jobs:
 
       - name: "terraform: init"
         run: terraform init
+        working-directory: terraform/zones/
     
       - name: "terraform: plan stage"
         id: plan
+        working-directory: terraform/zones/
         run: terraform plan -no-color
       
       - run: echo ${{ steps.plan.outputs.stdout }}
