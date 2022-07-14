@@ -32,7 +32,9 @@ jobs:
         run: |
           cd terraform/zones
           echo `pwd`
-          echo `ls -lah`
+          echo $TFE_TOKEN
+        env:
+          TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
 
       - name: "terraform: init"
         run: cd terraform/zones; terraform init
