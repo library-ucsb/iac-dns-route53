@@ -28,7 +28,8 @@ jobs:
       - name: "terraform: installing"
         uses: hashicorp/setup-terraform@v2
 
-          
+      - name: "debug: which terraform"
+        run: echo `which terraform`    
 
       - name: "terraform: init"
         run: cd terraform/zones; terraform init
