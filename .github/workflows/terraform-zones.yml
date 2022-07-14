@@ -6,8 +6,8 @@ on:
     branches:
       - dev
       - dev-**
-    paths:
-      - "terraform/*"
+    #paths:
+    #  - "terraform/*"
     #paths-ignore:
     
 jobs:
