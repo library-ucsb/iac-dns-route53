@@ -9,6 +9,8 @@ module "module-library_workspace" {
   oauth_client_id       = var.repo.oauth_client_id
   github_organization   = var.repo.github_organization
   tfc_working_directory = var.repo.tfc_working_directory
+  auto_apply            = var.repo.tfc_auto_apply
+  github_enforce_admins = var.repo.github_enforce_admins
 }
 
 output "library-workspace" {
