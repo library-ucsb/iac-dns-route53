@@ -6,7 +6,8 @@ variable "repo" {
     oauth_client_id         = string
     github_organization     = string
     tfc_working_directory   = string
-    tfc_auto_apply          = bool 
+    tfc_auto_apply          = bool
+    github_enforce_admins   = bool
   })
 }
 

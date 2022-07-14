@@ -6,4 +6,5 @@ repo = {
     github_organization     = "library-ucsb"
     tfc_working_directory   = "/terraform/zones/"
     tfc_auto_apply          = false
+    github_enforce_admins   = false
 }
