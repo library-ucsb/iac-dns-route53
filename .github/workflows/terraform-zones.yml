@@ -2,6 +2,7 @@
 
 name: "terraform: initialize and plan - aws_r53_hosted_zones"
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
