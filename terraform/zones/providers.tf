@@ -4,8 +4,9 @@ terraform {
       source = "integrations/github"
       version = "4.26.1"
     }
-    tfe = {
-      source = "hashicorp/tfe"
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.22.0"
     }
   }
 }
@@ -14,7 +15,7 @@ provider "github" {
   owner = var.github_owner
 }
 
-provider "tfe" {
-  # Configuration options
+provider "aws" {
+  region = var.aws_region
 }
 
