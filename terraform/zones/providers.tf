@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "github" {
-  owner = var.github_owner
+  owner = var.repo.github_organization
 }
 
 provider "aws" {

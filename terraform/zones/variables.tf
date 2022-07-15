@@ -1,13 +1,11 @@
 variable "repo" {
   type = object({
-    name                    = string
-    description             = string
-    tfc_organization        = string
-    oauth_client_id         = string
-    github_organization     = string
-    tfc_working_directory   = string
-    tfc_auto_apply          = bool
-    github_enforce_admins   = bool
+    name                        = string
+    description                 = string
+    github_organization         = string
+    github_enforce_admins       = bool
+    github_allows_force_pushes  = bool
+    github_push_restrictions    = list(string)
   })
 }
 
