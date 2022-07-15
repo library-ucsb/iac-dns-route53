@@ -1,18 +1,23 @@
 
-module "module-library_workspace" {
-  source  = "app.terraform.io/library-ucsb-core/module-library_workspace/tfc"
-  version = "0.0.7"
-  # insert required variables here
+## Should switch to just a github_repository.  Eliminate TFC from the equation.
+module "github_repository" {
+  source                = "github.com/library-ucsb/terraform-tfc-module-github_repository"
+
   name                  = var.repo.name
   description           = var.repo.description
-  tfc_organization      = var.repo.tfc_organization
-  oauth_client_id       = var.repo.oauth_client_id
-  github_organization   = var.repo.github_organization
-  tfc_working_directory = var.repo.tfc_working_directory
-  auto_apply            = var.repo.tfc_auto_apply
-  github_enforce_admins = var.repo.github_enforce_admins
+  auto_init             = false
+  visibility            = "public"
 }
 
-output "library-workspace" {
-    value = module.module-library_workspace
+
+module "github_branch_protection" {
+  source                    = "github.com/library-ucsb/terraform-tfc-module-github_branch_protection"
+  repository_id             = module.github_repository.node_id
+  enforce_admins            = var.repo.github_enforce_admins
+  push_restrictions         = var.repo.github_push_restrictions
+  allows_force_pushes       = var.repo.github_allows_force_pushes 
+}
+
+output "github_repository_project" {
+    value = module.github_repository
 }
