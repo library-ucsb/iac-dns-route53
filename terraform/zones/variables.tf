@@ -21,3 +21,8 @@ variable "github_owner" {
   type                      = string
   default                   = "library-ucsb"  
 }
+
+variable "aws_region" {
+  type                      = string
+  default                   = "us-west-2"  
+}
