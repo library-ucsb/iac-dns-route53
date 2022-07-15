@@ -1,0 +1,34 @@
+
+
+name: "terraform: initialize and plan - aws_r53_hosted_zones"
+on:
+  push:
+    paths:
+      - "terraform/zones/**"
+    #paths-ignore:
+    
+jobs:
+
+  init:
+    name: "terraform: setup, initialize, and plan"
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v3
+
+      - name: "terraform: installing"
+        uses: hashicorp/setup-terraform@v2
+
+      - name: "terraform: init"
+        run: terraform init
+        working-directory: terraform/zones/
+    
+      - name: "terraform: plan stage"
+        id: plan
+        working-directory: terraform/zones/
+        run: terraform plan -no-color
+      
+      - run: echo ${{ steps.plan.outputs.stdout }}
+      - run: echo ${{ steps.plan.outputs.stderr }}
+      - run: echo ${{ steps.plan.outputs.exitcode }}
