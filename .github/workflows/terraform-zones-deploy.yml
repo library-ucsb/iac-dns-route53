@@ -2,12 +2,9 @@
 
 name: "terraform: initialize and plan - aws_r53_hosted_zones"
 on:
-  workflow_dispatch:
   push:
     branches:
-      - '!main'
-      - 'dev'
-      - 'dev-**'
+      - main
     
 jobs:
 
@@ -16,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest 
     env:
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -29,14 +25,12 @@ jobs:
 
       - name: "terraform: init"
         run: cd terraform/zones; terraform init -upgrade
-        env:
-          TFE_TOKEN: ${{ secrets.TFE_TOKEN }}        
     
       - name: "terraform: plan stage"
         id: plan
         run: cd terraform/zones; terraform plan -no-color
-        env:
-          TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+      - name: "terraform: apply"
+        id: apply
+        run: cd terraform/zones; terraform apply -auto-apply
       
