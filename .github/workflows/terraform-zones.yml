@@ -7,9 +7,6 @@ on:
     branches:
       - dev
       - dev-**
-    #paths:
-    #  - "terraform/*"
-    #paths-ignore:
     
 jobs:
 
@@ -29,16 +26,8 @@ jobs:
       - name: "terraform: installing"
         uses: hashicorp/setup-terraform@v2
 
-      - name: "debug: which terraform"
-        run: |
-          cd terraform/zones
-          echo `pwd`
-          echo $TFE_TOKEN
-        env:
-          TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
-
       - name: "terraform: init"
-        run: cd terraform/zones; terraform init
+        run: cd terraform/zones; terraform init -upgrade
         env:
           TFE_TOKEN: ${{ secrets.TFE_TOKEN }}        
     
@@ -50,6 +39,3 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
-      - run: echo ${{ steps.plan.outputs.stdout }}
-      - run: echo ${{ steps.plan.outputs.stderr }}
-      - run: echo ${{ steps.plan.outputs.exitcode }}
