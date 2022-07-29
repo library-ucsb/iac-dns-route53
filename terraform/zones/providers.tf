@@ -17,5 +17,9 @@ provider "github" {
 
 provider "aws" {
   region = var.aws_region
+
+  assume_role {
+    role_arn     = "arn:aws:iam::406663345920:role/ucsb-role-terraform-full"
+  }
 }
 

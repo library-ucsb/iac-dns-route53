@@ -1,6 +1,6 @@
 
 
-name: "terraform: initialize and plan - aws_r53_hosted_zones"
+name: "terraform: initialize and plan"
 on:
   push:
     branches:
@@ -18,6 +18,14 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::406663345920:role/ucsb-role-terraform-full
+          aws-region: us-west-2
+          role-duration-seconds: 900
+
       - name: checkout branch
         uses: actions/checkout@v3
 
