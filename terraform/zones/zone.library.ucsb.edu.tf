@@ -18,6 +18,14 @@ zone_id = local.library-zone_id
   records = ["23.185.0.4"]
 }
 
+resource "aws_route53_record" "josh-demo-library-ucsb-edu-A" {
+  zone_id = local.library-zone_id
+  name    = "josh-demo.library.ucsb.edu."
+  type    = "A"
+  ttl     = "60"
+  records = ["1.1.1.1"]
+}
+
 resource "aws_route53_record" "winshares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "winshares.library.ucsb.edu."
