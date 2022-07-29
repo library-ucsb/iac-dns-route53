@@ -1,6 +1,6 @@
 
 
-name: "terraform: initialize and plan"
+name: "terraform: initialize and apply"
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
 jobs:
 
   init:
-    name: "terraform: setup, initialize, and plan"
+    name: "terraform: setup, initialize, and apply"
     runs-on: ubuntu-latest 
     env:
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -35,11 +35,8 @@ jobs:
       - name: "terraform: init"
         run: cd terraform/zones; terraform init -upgrade
     
-      - name: "terraform: plan stage"
-        id: plan
-        run: cd terraform/zones; terraform plan -no-color
-      
+    
       - name: "terraform: apply"
         id: apply
-        run: cd terraform/zones; terraform apply -auto-approve
+        run: cd terraform/zones; terraform apply -auto-approve -no-color
       
