@@ -1425,3 +1425,94 @@ zone_id = local.library-zone_id
   ttl     = "10800"
   records = ["128.111.121.42"]
 }
+
+resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "ops.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-970.awsdns-57.net",
+    "ns-1842.awsdns-38.co.uk",
+    "ns-68.awsdns-08.com",
+    "ns-1357.awsdns-41.org"
+  ]
+}
+
+resource "aws_route53_record" "delegation-cylinders-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "cylinders.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-1864.awsdns-41.co.uk",
+    "ns-681.awsdns-21.net",
+    "ns-12.awsdns-01.com",
+    "ns-1216.awsdns-24.org"
+  ]
+}
+
+resource "aws_route53_record" "delegation-digital-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "digital.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-1553.awsdns-02.co.uk",
+    "ns-236.awsdns-29.com",
+    "ns-1002.awsdns-61.net",
+    "ns-1378.awsdns-44.org"
+  ]
+}
+
+resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "dld.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-1447.awsdns-52.org",
+    "ns-290.awsdns-36.com",
+    "ns-1923.awsdns-48.co.uk",
+    "ns-739.awsdns-28.net"
+  ]
+}
+
+resource "aws_route53_record" "delegation-geodata-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "geodata.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-1907.awsdns-46.co.uk",
+    "ns-750.awsdns-29.net",
+    "ns-76.awsdns-09.com",
+    "ns-1126.awsdns-12.org"
+  ]
+}
+
+resource "aws_route53_record" "delegation-spotlight-stage-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "spotlight-stage.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-588.awsdns-09.net",
+    "ns-1042.awsdns-02.org",
+    "ns-1754.awsdns-27.co.uk",
+    "ns-171.awsdns-21.com"
+  ]
+}
+
+resource "aws_route53_record" "delegation-spotlight-library-ucsb-edu-NS" {
+  zone_id = local.library-zone_id
+  name    = "spotlight.library.ucsb.edu"
+  type    = "NS"
+  ttl     = "10800"
+  records = [
+    "ns-1437.awsdns-51.org",
+    "ns-1706.awsdns-21.co.uk",
+    "ns-817.awsdns-38.net",
+    "ns-7.awsdns-00.com"
+  ]
+}
