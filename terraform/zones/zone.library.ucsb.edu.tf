@@ -18,14 +18,6 @@ zone_id = local.library-zone_id
   records = ["23.185.0.4"]
 }
 
-resource "aws_route53_record" "josh-demo-library-ucsb-edu-CNAME" {
-  zone_id = local.library-zone_id
-  name    = "josh-demo.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "60"
-  records = ["adp.library.ucsb.edu"]
-}
-
 resource "aws_route53_record" "winshares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "winshares.library.ucsb.edu."
@@ -1434,7 +1426,7 @@ zone_id = local.library-zone_id
   records = ["128.111.121.42"]
 }
 
-resource "aws_route53_record" "delegation-ops.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "ops.library.ucsb.edu"
   type    = "NS"
@@ -1447,7 +1439,7 @@ resource "aws_route53_record" "delegation-ops.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-cylinders.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-cylinders-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "cylinders.library.ucsb.edu"
   type    = "NS"
@@ -1460,7 +1452,7 @@ resource "aws_route53_record" "delegation-cylinders.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-digital.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-digital-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu"
   type    = "NS"
@@ -1473,7 +1465,7 @@ resource "aws_route53_record" "delegation-digital.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-dld.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "dld.library.ucsb.edu"
   type    = "NS"
@@ -1486,7 +1478,7 @@ resource "aws_route53_record" "delegation-dld.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-geodata.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-geodata-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "geodata.library.ucsb.edu"
   type    = "NS"
@@ -1499,7 +1491,7 @@ resource "aws_route53_record" "delegation-geodata.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-spotlight-stage.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-spotlight-stage-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "spotlight-stage.library.ucsb.edu"
   type    = "NS"
@@ -1512,7 +1504,7 @@ resource "aws_route53_record" "delegation-spotlight-stage.library.ucsb.edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-spotlight.library.ucsb.edu-NS" {
+resource "aws_route53_record" "delegation-spotlight-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "spotlight.library.ucsb.edu"
   type    = "NS"
