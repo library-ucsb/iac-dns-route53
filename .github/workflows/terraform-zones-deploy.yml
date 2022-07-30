@@ -8,8 +8,8 @@ on:
       - 'main'
     paths:
       - 'terraform/**'
+      - '.github/workflows/terraform-**'
 
-  
     
 jobs:
 
