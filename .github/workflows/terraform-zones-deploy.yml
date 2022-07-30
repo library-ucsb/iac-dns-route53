@@ -8,8 +8,7 @@ on:
       - 'main'
     paths:
       - 'terraform/**'
-      - '.github/workflows/terraform-**'
-
+      - '.github/workflows/terraform-*.yml'
     
 jobs:
 
