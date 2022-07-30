@@ -5,7 +5,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - 'main'
+    paths:
+      - 'terraform/**'
   
     
 jobs:
