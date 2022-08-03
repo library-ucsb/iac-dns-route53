@@ -1202,17 +1202,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "wildcard-blackfeminism-library-ucsb-edu-A" {
-  zone_id = local.library-zone_id
-  name    = "*.blackfeminism.library.ucsb.edu"
-  type    = "A"
-  alias {
-    name                   = adb450577d1c711e9acaa0a5f5c694d7
-    zone_id                = Z1H1FL5HABSF5
-    evaluate_target_health = true
-  }
-}
-
 resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dhcp-servers-1.library.ucsb.edu."
