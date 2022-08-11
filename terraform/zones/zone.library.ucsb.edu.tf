@@ -738,14 +738,6 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "istl-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "istl.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "iiif-sandbox.library.ucsb.edu."
