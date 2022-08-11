@@ -738,14 +738,6 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "istl-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "istl.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "iiif-sandbox.library.ucsb.edu."
@@ -1122,14 +1114,6 @@ zone_id = local.library-zone_id
   records = ["ec2-54-213-10-104.us-west-2.compute.amazonaws.com."]
 }
 
-resource "aws_route53_record" "collman-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "collman.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "classes-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "classes.library.ucsb.edu."
@@ -1433,19 +1417,6 @@ resource "aws_route53_record" "delegation-cylinders-library-ucsb-edu-NS" {
     "ns-681.awsdns-21.net",
     "ns-12.awsdns-01.com",
     "ns-1216.awsdns-24.org"
-  ]
-}
-
-resource "aws_route53_record" "delegation-digital-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "digital.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1553.awsdns-02.co.uk",
-    "ns-236.awsdns-29.com",
-    "ns-1002.awsdns-61.net",
-    "ns-1378.awsdns-44.org"
   ]
 }
 
