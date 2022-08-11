@@ -1138,22 +1138,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "chronopolis-dev-01-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "chronopolis-dev-01.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.238"]
-}
-
-resource "aws_route53_record" "chronopolis-bagging-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "chronopolis-bagging.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["chronopolis-dev-01.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "cemaweb-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "cemaweb.library.ucsb.edu."
