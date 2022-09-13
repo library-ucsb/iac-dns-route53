@@ -2,6 +2,10 @@ locals {
   library-zone_id = aws_route53_zone.r53_zones["library-ucsb-edu"].zone_id
 }
 
+data "aws_elb" "dld-eks-nginx-ingress" {
+  name = "adb450577d1c711e9acaa0a5f5c694d7"
+}
+
 resource "aws_route53_record" "zabbix-library-ucsb-edu-CNAME" {
   zone_id = local.library-zone_id
   name    = "zabbix.library.ucsb.edu."
@@ -1168,6 +1172,17 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+}
+
+resource "aws_route53_record" "wildcard-blackfeminism-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.blackfeminism.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
+    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
