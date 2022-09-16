@@ -1166,48 +1166,12 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "blackfeminism-library-ucsb-edu-A" {
+resource "aws_route53_record" "blackfeminism-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "blackfeminism.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
-    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
-    evaluate_target_health = true
-  }
-}
-
-resource "aws_route53_record" "wildcard-blackfeminism-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "*.blackfeminism.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
-    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
-    evaluate_target_health = true
-  }
-}
-
-resource "aws_route53_record" "digital-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "digital.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
-    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
-    evaluate_target_health = true
-  }
-}
-
-resource "aws_route53_record" "wildcard-digital-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "*.digital.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
-    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
-    evaluate_target_health = true
-  }
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "wildcard-blackfeminism-library-ucsb-edu-A" {
