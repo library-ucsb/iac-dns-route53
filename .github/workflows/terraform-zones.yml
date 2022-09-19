@@ -7,7 +7,8 @@ on:
     branches:
       - '!main'
       - 'dev'
-      - 'dev-**'
+    paths:
+      - '!.github/workflows/**'
 
     
 jobs:
@@ -44,5 +45,3 @@ jobs:
       - name: "terraform: plan stage"
         id: plan
         run: cd terraform/zones; terraform plan -no-color
-
-      
