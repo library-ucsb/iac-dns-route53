@@ -1,5 +1,3 @@
-
-
 name: "terraform: initialize and apply"
 on:
   workflow_dispatch:
@@ -8,8 +6,8 @@ on:
       - 'main'
     paths:
       - 'terraform/**'
-      - '.github/workflows/terraform-*.yml'
-    
+      - '!.github/workflows/terraform-*.yml'
+
 jobs:
 
   init:
@@ -38,7 +36,6 @@ jobs:
 
       - name: "terraform: init"
         run: cd terraform/zones; terraform init -upgrade
-    
     
       - name: "terraform: apply"
         id: apply
