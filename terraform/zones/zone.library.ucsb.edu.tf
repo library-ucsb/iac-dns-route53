@@ -1210,17 +1210,6 @@ zone_id = local.library-zone_id
   }
 }
 
-resource "aws_route53_record" "wildcard-blackfeminism-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "*.blackfeminism.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_elb.dld-eks-nginx-ingress.dns_name
-    zone_id                = data.aws_elb.dld-eks-nginx-ingress.zone_id
-    evaluate_target_health = true
-  }
-}
-
 resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dhcp-servers-1.library.ucsb.edu."
