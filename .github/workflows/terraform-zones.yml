@@ -1,18 +1,8 @@
-
-
 name: "terraform: initialize and plan"
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - '!main'
-      - 'dev'
-    paths:
-      - '!.github/workflows/**'
-
     
 jobs:
-
   init:
     name: "terraform: setup, initialize, and plan"
     runs-on: ubuntu-latest 
@@ -23,7 +13,6 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
