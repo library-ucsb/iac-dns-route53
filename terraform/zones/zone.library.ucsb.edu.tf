@@ -86,14 +86,6 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "ulpia-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ulpia.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.9"]
-}
-
 resource "aws_route53_record" "ucsbreads-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
@@ -436,14 +428,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["openvpn2019.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "nuzi-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "nuzi.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.10"]
 }
 
 resource "aws_route53_record" "ns2-library-ucsb-edu-A" {
@@ -1012,14 +996,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["epm-dev1.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "ebla-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ebla.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.8"]
 }
 
 resource "aws_route53_record" "duodng-library-ucsb-edu-CNAME" {
