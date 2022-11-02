@@ -694,14 +694,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.190"]
 }
 
-resource "aws_route53_record" "jobs-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "jobs.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["ucsblibrary.theresumator.com."]
-}
-
 resource "aws_route53_record" "jenkinswww-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "jenkinswww.library.ucsb.edu."
