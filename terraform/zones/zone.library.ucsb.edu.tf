@@ -30,14 +30,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.95"]
 }
 
-resource "aws_route53_record" "wiki-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "wiki.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "wiki-aws-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "wiki-aws.library.ucsb.edu."
@@ -188,14 +180,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["wdc4kd3zsrn9.stspg-customer.com."]
-}
-
-resource "aws_route53_record" "stash-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "stash.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "starlight-library-ucsb-edu-CNAME" {
