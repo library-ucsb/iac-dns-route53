@@ -1206,6 +1206,50 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "spotlight-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "spotlight.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-spotlight-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.spotlight.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "spotlight-stage-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "spotlight-stage.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-spotlight-stage-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.spotlight-stage.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dhcp-servers-1.library.ucsb.edu."
@@ -1453,31 +1497,5 @@ resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
     "ns-290.awsdns-36.com",
     "ns-1923.awsdns-48.co.uk",
     "ns-739.awsdns-28.net"
-  ]
-}
-
-resource "aws_route53_record" "delegation-spotlight-stage-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "spotlight-stage.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-588.awsdns-09.net",
-    "ns-1042.awsdns-02.org",
-    "ns-1754.awsdns-27.co.uk",
-    "ns-171.awsdns-21.com"
-  ]
-}
-
-resource "aws_route53_record" "delegation-spotlight-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "spotlight.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1437.awsdns-51.org",
-    "ns-1706.awsdns-21.co.uk",
-    "ns-817.awsdns-38.net",
-    "ns-7.awsdns-00.com"
   ]
 }
