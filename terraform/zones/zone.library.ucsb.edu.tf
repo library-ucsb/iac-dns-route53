@@ -1140,6 +1140,28 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "cylinders-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "cylinders.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-cylinders-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.cylinders.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu."
@@ -1396,19 +1418,6 @@ resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
     "ns-1842.awsdns-38.co.uk",
     "ns-68.awsdns-08.com",
     "ns-1357.awsdns-41.org"
-  ]
-}
-
-resource "aws_route53_record" "delegation-cylinders-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "cylinders.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1864.awsdns-41.co.uk",
-    "ns-681.awsdns-21.net",
-    "ns-12.awsdns-01.com",
-    "ns-1216.awsdns-24.org"
   ]
 }
 
