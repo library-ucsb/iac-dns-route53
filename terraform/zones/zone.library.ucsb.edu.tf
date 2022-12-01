@@ -2,10 +2,6 @@ locals {
   library-zone_id = aws_route53_zone.r53_zones["library-ucsb-edu"].zone_id
 }
 
-data "aws_elb" "dld-eks-nginx-ingress" {
-  name = "adb450577d1c711e9acaa0a5f5c694d7"
-}
-
 data "aws_elb" "dld-eks-ingress-nginx-v1" {
   name = "a8058ed75a0774def8ba0fb05a90144d"
 }
@@ -1144,6 +1140,28 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "cylinders-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "cylinders.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-cylinders-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.cylinders.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu."
@@ -1158,6 +1176,72 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "wildcard-digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "*.digital.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "geodata-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "geodata.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-geodata-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.geodata.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "spotlight-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "spotlight.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-spotlight-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.spotlight.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "spotlight-stage-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "spotlight-stage.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-spotlight-stage-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.spotlight-stage.library.ucsb.edu."
   type    = "A"
   alias {
     name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
@@ -1403,19 +1487,6 @@ resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
   ]
 }
 
-resource "aws_route53_record" "delegation-cylinders-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "cylinders.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1864.awsdns-41.co.uk",
-    "ns-681.awsdns-21.net",
-    "ns-12.awsdns-01.com",
-    "ns-1216.awsdns-24.org"
-  ]
-}
-
 resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "dld.library.ucsb.edu"
@@ -1426,44 +1497,5 @@ resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
     "ns-290.awsdns-36.com",
     "ns-1923.awsdns-48.co.uk",
     "ns-739.awsdns-28.net"
-  ]
-}
-
-resource "aws_route53_record" "delegation-geodata-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "geodata.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1907.awsdns-46.co.uk",
-    "ns-750.awsdns-29.net",
-    "ns-76.awsdns-09.com",
-    "ns-1126.awsdns-12.org"
-  ]
-}
-
-resource "aws_route53_record" "delegation-spotlight-stage-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "spotlight-stage.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-588.awsdns-09.net",
-    "ns-1042.awsdns-02.org",
-    "ns-1754.awsdns-27.co.uk",
-    "ns-171.awsdns-21.com"
-  ]
-}
-
-resource "aws_route53_record" "delegation-spotlight-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "spotlight.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1437.awsdns-51.org",
-    "ns-1706.awsdns-21.co.uk",
-    "ns-817.awsdns-38.net",
-    "ns-7.awsdns-00.com"
   ]
 }
