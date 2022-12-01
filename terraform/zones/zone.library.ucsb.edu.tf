@@ -1184,6 +1184,28 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "geodata-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "geodata.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "wildcard-geodata-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.geodata.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "dhcp-servers-1-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dhcp-servers-1.library.ucsb.edu."
@@ -1431,19 +1453,6 @@ resource "aws_route53_record" "delegation-dld-library-ucsb-edu-NS" {
     "ns-290.awsdns-36.com",
     "ns-1923.awsdns-48.co.uk",
     "ns-739.awsdns-28.net"
-  ]
-}
-
-resource "aws_route53_record" "delegation-geodata-library-ucsb-edu-NS" {
-  zone_id = local.library-zone_id
-  name    = "geodata.library.ucsb.edu"
-  type    = "NS"
-  ttl     = "10800"
-  records = [
-    "ns-1907.awsdns-46.co.uk",
-    "ns-750.awsdns-29.net",
-    "ns-76.awsdns-09.com",
-    "ns-1126.awsdns-12.org"
   ]
 }
 
