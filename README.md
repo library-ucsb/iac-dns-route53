@@ -11,7 +11,7 @@ Test and deploy external DNS zone config for Route53.
 ## Directories
 - .github\workflows : steps to execute terraform plan and apply 
 - terraform\zones   : zone files and terraform variables
-- [tools\tfz53]() : dependency used for converting BIND zonefile to AWS Route53 resource definitions
+- [tools\tfz53](https://github.com/carlpett/tfz53) : dependency used for converting BIND zonefile to AWS Route53 resource definitions
 
 # Updating zones
 1. Checkout new branch from `main`
