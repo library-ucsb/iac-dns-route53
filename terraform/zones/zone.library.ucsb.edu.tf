@@ -926,6 +926,14 @@ zone_id = local.library-zone_id
   records = ["license-2019.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "mathematica-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "mathematica.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["license-2019.library.ucsb.edu."]
+}
+
 resource "aws_route53_record" "eset-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "eset.library.ucsb.edu."
