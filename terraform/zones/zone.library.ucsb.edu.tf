@@ -507,7 +507,7 @@ zone_id = local.library-zone_id
   name    = "maxqda.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lm-server.library.ucsb.edu."]
+  records = ["license-2019.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "managefilemaker-library-ucsb-edu-A" {
