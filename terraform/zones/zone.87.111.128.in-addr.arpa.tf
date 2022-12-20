@@ -82,14 +82,6 @@ resource "aws_route53_record" "_54-87-111-128-in-addr-arpa-PTR" {
   records = ["proxy1-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_51-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "51.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["lm-server.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_50-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "50.87.111.128.in-addr.arpa."
