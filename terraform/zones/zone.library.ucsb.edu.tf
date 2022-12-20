@@ -558,6 +558,14 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "lm-server-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "lm-server.library.ucsb.edu."
+  type    = "A"
+  ttl     = "10800"
+  records = ["128.111.87.51"]
+}
+
 resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "license-2019.library.ucsb.edu."
