@@ -64,7 +64,7 @@ resource "aws_route53_record" "alexandria-ucsb-edu-A" {
   name    = "alexandria.ucsb.edu."
   type    = "A"
   ttl     = "10800"
-  records = ["128.111.87.12"]
+  records = ["128.111.87.13"]
 }
 
 #  All *.legacy.library.ucsb.edu requests
