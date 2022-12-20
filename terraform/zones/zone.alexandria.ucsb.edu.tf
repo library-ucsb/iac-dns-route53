@@ -7,7 +7,7 @@ resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   name    = "www.alexandria.ucsb.edu."
   type    = "CNAME"
   ttl     = "78761"
-  records = ["haproxyt.library.ucsb.edu."]
+  records = ["haproxyt1.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
