@@ -6,7 +6,7 @@ resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   zone_id = local.alex-zone_id
   name    = "www.alexandria.ucsb.edu."
   type    = "CNAME"
-  ttl     = "30"
+  ttl     = "10800"
   records = ["haproxyt1.library.ucsb.edu."]
 }
 
@@ -63,7 +63,7 @@ resource "aws_route53_record" "alexandria-ucsb-edu-A" {
   zone_id = local.alex-zone_id
   name    = "alexandria.ucsb.edu."
   type    = "A"
-  ttl     = "30"
+  ttl     = "10800"
   records = ["128.111.87.13"]
 }
 
