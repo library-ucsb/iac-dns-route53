@@ -755,7 +755,7 @@ zone_id = local.library-zone_id
   name    = "haproxy.library.ucsb.edu."
   type    = "A"
   ttl     = "30"
-  records = ["128.111.87.248"]
+  records = ["128.111.87.249"]
 }
 
 resource "aws_route53_record" "guides-library-ucsb-edu-CNAME" {
