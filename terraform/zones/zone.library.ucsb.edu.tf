@@ -754,7 +754,7 @@ resource "aws_route53_record" "haproxy-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "haproxy.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "30"
   records = ["128.111.87.248"]
 }
 
