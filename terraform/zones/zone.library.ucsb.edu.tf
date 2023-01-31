@@ -310,6 +310,14 @@ zone_id = local.library-zone_id
   records = ["nginxlb.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "proxy-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "proxy.library.ucsb.edu."
+  type    = "A"
+  ttl     = "10800"
+  records = ["128.111.121.42"]
+}
+
 resource "aws_route53_record" "pcut-test-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "pcut-test.library.ucsb.edu."
