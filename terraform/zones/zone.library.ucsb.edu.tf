@@ -310,70 +310,6 @@ zone_id = local.library-zone_id
   records = ["nginxlb.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "proxy1-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "proxy1.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["proxy1-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "proxy1-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "proxy1-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.54"]
-}
-
-resource "aws_route53_record" "proxy-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "proxy.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.121.42"]
-}
-
-resource "aws_route53_record" "proxy-v-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "proxy-v.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["proxy1-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "proxy-lib-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "proxy-lib.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.34"]
-}
-
-resource "aws_route53_record" "proxy-lib-352-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "proxy-lib-352.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["proxy-lib.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "proxy-lib-352-1-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "proxy-lib-352-1.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["proxy-lib.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "proton-os-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "proton-os.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.228"]
-}
-
 resource "aws_route53_record" "pcut-test-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "pcut-test.library.ucsb.edu."
@@ -494,14 +430,6 @@ zone_id = local.library-zone_id
   records = ["splunk-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "logs1-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "logs1-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.38"]
-}
-
 resource "aws_route53_record" "logs-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "logs.library.ucsb.edu."
@@ -596,14 +524,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["live-lauc-library-ucsb-edu-v01.pantheonsite.io."]
-}
-
-resource "aws_route53_record" "lamp-test-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "lamp-test.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.192"]
 }
 
 resource "aws_route53_record" "l3vffdmeidbrtg2rgh5ralxr4yxtpfkz-_domainkey-library-ucsb-edu-CNAME" {
@@ -740,22 +660,6 @@ zone_id = local.library-zone_id
   type    = "TXT"
   ttl     = "10800"
   records = ["v=DKIM1; k=rsa; p=\"\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk52UK/XujEZXtTTscJMo7PugBln05JlNEG\"\"LnAk6KQURdOcfnevPiSxi7yszeP/gZE7KhwfhSctPAtQIumIaD8rl4yVd8ySp3ovdR/P2U5TrBx+oj/\"\"ecTvG+wQFTRMRmnrdiAoaAhDinXJb++ytvape6hmip9FGsYEwR9aYtfQ5zFLGbelhv4BmXNVdgOr7JD3\"\"6WKg7/7Z02Yr1u7E2d2INTw6LAKb3Gx/3De2z6FxoK+CITpcbXoeZDfTSI1+LOiWp7P7N2K66kTVUCu/\"\"4WCnEIACHIfnJ786wDL9XUjy6zY1xkUoxL03lCljuJlGPAHxEwxWYdPzlOUsyjbe5IIdQIDAQAB"]
-}
-
-resource "aws_route53_record" "gheapigeeadmin-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "gheapigeeadmin.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "ghe-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "ghe.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["github.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "geoworks-sandbox-library-ucsb-edu-A" {
@@ -900,22 +804,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["epm-dev1.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "drupalprod-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "drupalprod.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "drupaldev-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "drupaldev.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "dc5-library-ucsb-edu-A" {
