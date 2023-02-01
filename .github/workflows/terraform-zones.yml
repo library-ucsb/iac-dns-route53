@@ -1,6 +1,11 @@
+---
 name: "terraform: initialize and plan"
 on:
   workflow_dispatch:
+  pull_request:
+    types: [opened, reopened]
+    paths:
+    - 'terraform/zones/**.tf'
     
 jobs:
   init:
@@ -34,3 +39,4 @@ jobs:
       - name: "terraform: plan stage"
         id: plan
         run: cd terraform/zones; terraform plan -no-color
+...
