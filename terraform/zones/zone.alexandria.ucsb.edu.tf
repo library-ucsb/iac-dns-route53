@@ -23,7 +23,7 @@ resource "aws_route53_record" "piru-alexandria-ucsb-edu-CNAME" {
   name    = "piru.alexandria.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 #  Legacy ADL through HA-HAproxy pair
