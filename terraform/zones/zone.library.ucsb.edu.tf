@@ -35,7 +35,7 @@ zone_id = local.library-zone_id
   name    = "we-remember-them.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
 resource "aws_route53_record" "we-remember-them-test-library-ucsb-edu-CNAME" {
