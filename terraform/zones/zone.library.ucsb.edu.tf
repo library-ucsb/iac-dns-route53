@@ -38,14 +38,6 @@ zone_id = local.library-zone_id
   records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
-resource "aws_route53_record" "we-remember-them-test-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "we-remember-them-test.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "20"
-  records = ["dfxvhm9lq0zwe.cloudfront.net."]
-}
-
 resource "aws_route53_record" "vpn-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "vpn.library.ucsb.edu."
