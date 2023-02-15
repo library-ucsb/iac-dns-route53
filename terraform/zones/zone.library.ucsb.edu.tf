@@ -38,6 +38,14 @@ zone_id = local.library-zone_id
   records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
+resource "aws_route53_record" "we-remember-them-cloudfront-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_15a93d1bd59ecfa0a90c875c62475494.we-remember-them.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_7933f0008a7edafc56a5ad719968f404.kdbplsmznr.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "vpn-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "vpn.library.ucsb.edu."
