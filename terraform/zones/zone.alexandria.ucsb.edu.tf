@@ -26,13 +26,12 @@ resource "aws_route53_record" "piru-alexandria-ucsb-edu-CNAME" {
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-#  Legacy ADL through HA-HAproxy pair
 resource "aws_route53_record" "legacy-alexandria-ucsb-edu-CNAME" {
   zone_id = local.alex-zone_id
   name    = "legacy.alexandria.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  ttl     = "300"
+  records = ["d1xax2soipw9h8.cloudfront.net."]
 }
 
 resource "aws_route53_record" "legacy-alexandria-ucsb-edu-cloudfront-CNAME" {
