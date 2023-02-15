@@ -35,6 +35,14 @@ resource "aws_route53_record" "legacy-alexandria-ucsb-edu-CNAME" {
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "legacy-alexandria-ucsb-edu-cloudfront-CNAME" {
+  zone_id = local.alex-zone_id
+  name    = "_f5146d47cecdfaa13d510c8d8b0e8bf5.legacy.alexandria.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["_633c924c0d54b711422966e745e0f692.kdbplsmznr.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "collections-alexandria-ucsb-edu-CNAME" {
   zone_id = local.alex-zone_id
   name    = "collections.alexandria.ucsb.edu."
