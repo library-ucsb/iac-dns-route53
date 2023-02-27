@@ -1210,14 +1210,6 @@ zone_id = local.library-zone_id
   records = ["5WqZBNuHUS2c3P1xEtGVRuL_zBwYywWsdVF27tJfc4w"]
 }
 
-resource "aws_route53_record" "_1a4ae0fdc09a2579501cceb77eff2835-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "_1a4ae0fdc09a2579501cceb77eff2835.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["_cecf8d1aea6148c752cdaeb6d9e6e16a.acm-validations.aws."]
-}
-
 resource "aws_route53_record" "_3ettaxfr6s43fvjdkithnbm5wpmcvtkb-_domainkey-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "3ettaxfr6s43fvjdkithnbm5wpmcvtkb._domainkey.library.ucsb.edu."
