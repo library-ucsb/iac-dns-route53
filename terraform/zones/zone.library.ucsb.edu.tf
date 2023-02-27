@@ -14,6 +14,14 @@ zone_id = local.library-zone_id
   records = ["23.185.0.4"]
 }
 
+resource "aws_route53_record" "wildcard-library-ucsb-edu-cloudfront-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_1a4ae0fdc09a2579501cceb77eff2835.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_cecf8d1aea6148c752cdaeb6d9e6e16a.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "winshares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "winshares.library.ucsb.edu."
@@ -35,14 +43,6 @@ zone_id = local.library-zone_id
   name    = "we-remember-them.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "we-remember-them-test-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "we-remember-them-test.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "20"
   records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
@@ -83,7 +83,7 @@ zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
 resource "aws_route53_record" "ucsbjenkins-library-ucsb-edu-CNAME" {
