@@ -91,7 +91,7 @@ zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["dfxvhm9lq0zwe.cloudfront.net."]
 }
 
 resource "aws_route53_record" "ucsbjenkins-library-ucsb-edu-CNAME" {
