@@ -14,14 +14,6 @@ zone_id = local.library-zone_id
   records = ["23.185.0.4"]
 }
 
-resource "aws_route53_record" "wildcard-library-ucsb-edu-cloudfront-CNAME" {
-zone_id = local.library-zone_id
-  name    = "_1a4ae0fdc09a2579501cceb77eff2835.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "300"
-  records = ["_cecf8d1aea6148c752cdaeb6d9e6e16a.acm-validations.aws."]
-}
-
 resource "aws_route53_record" "winshares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "winshares.library.ucsb.edu."
@@ -44,6 +36,14 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["dfxvhm9lq0zwe.cloudfront.net."]
+}
+
+resource "aws_route53_record" "we-remember-them-ssl-renewal-automation" {
+zone_id = local.library-zone_id
+  name    = "_15a93d1bd59ecfa0a90c875c62475494.we-remember-them.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_7933f0008a7edafc56a5ad719968f404.kdbplsmznr.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "vpn-library-ucsb-edu-CNAME" {
@@ -83,7 +83,15 @@ zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["dfxvhm9lq0zwe.cloudfront.net."]
+  records = ["d39iun9d2ez3mk.cloudfront.net."]
+}
+
+resource "aws_route53_record" "ucsbreads-ssl-renewal-automation" {
+zone_id = local.library-zone_id
+  name    = "_10aac3b05b759cb36c75fc38c71c610d.ucsbreads.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_4879fd5dd2fa87c472148a1cd79b0f28.dqxlbvzbzt.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "ucsbjenkins-library-ucsb-edu-CNAME" {
