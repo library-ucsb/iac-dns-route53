@@ -403,7 +403,15 @@ zone_id = local.library-zone_id
   name    = "misc.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["dhksq0pztv94b.cloudfront.net."]
+}
+
+resource "aws_route53_record" "misc-ssl-renewal-automation" {
+zone_id = local.library-zone_id
+  name    = "_49b27e2fdae39611164fc7da62860333.misc.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_ffb5064bd38d3b8ad1786a77c4d05725.dqxlbvzbzt.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "mil-library-ucsb-edu-CNAME" {
