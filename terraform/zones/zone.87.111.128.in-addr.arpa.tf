@@ -626,6 +626,22 @@ resource "aws_route53_record" "_107-87-111-128-in-addr-arpa-PTR" {
   records = ["adrl-sandbox.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "_103-87-111-128-in-addr-arpa-PTR" {
+  zone_id = local.rev87-zone_id
+  name    = "103.87.111.128.in-addr.arpa."
+  type    = "PTR"
+  ttl     = "10800"
+  records = ["staffprintdev1.library.ucsb.edu."]
+}
+
+resource "aws_route53_record" "_102-87-111-128-in-addr-arpa-PTR" {
+  zone_id = local.rev87-zone_id
+  name    = "102.87.111.128.in-addr.arpa."
+  type    = "PTR"
+  ttl     = "10800"
+  records = ["staffprint1.library.ucsb.edu."]
+}
+
 resource "aws_route53_record" "_10-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "10.87.111.128.in-addr.arpa."

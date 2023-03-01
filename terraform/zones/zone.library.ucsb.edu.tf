@@ -198,6 +198,22 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "staffprint1-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "staffprint1.library.ucsb.edu."
+  type    = "A"
+  ttl     = "10800"
+  records = ["128.111.87.102"]
+}
+
+resource "aws_route53_record" "staffprintdev1-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "staffprintdev1.library.ucsb.edu."
+  type    = "A"
+  ttl     = "10800"
+  records = ["128.111.87.103"]
+}
+
 resource "aws_route53_record" "sshgw-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "sshgw.library.ucsb.edu."
