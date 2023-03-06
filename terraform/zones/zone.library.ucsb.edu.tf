@@ -131,7 +131,7 @@ zone_id = local.library-zone_id
   name    = "truesound.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "tl-library-ucsb-edu-A" {
@@ -499,7 +499,7 @@ zone_id = local.library-zone_id
   name    = "lobero.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
@@ -1151,7 +1151,7 @@ zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "alma-sftp-library-ucsb-edu-CNAME" {
