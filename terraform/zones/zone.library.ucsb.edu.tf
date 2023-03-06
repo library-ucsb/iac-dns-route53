@@ -118,20 +118,12 @@ zone_id = local.library-zone_id
   records = ["128.111.87.247"]
 }
 
-resource "aws_route53_record" "truesoundstage-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "truesoundstage.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "truesound-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "truesound.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "tl-library-ucsb-edu-A" {
@@ -470,20 +462,12 @@ zone_id = local.library-zone_id
   records = ["splunk-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "loberostage-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "loberostage.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "lobero-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "lobero.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
@@ -1122,20 +1106,12 @@ zone_id = local.library-zone_id
   records = ["128.111.87.115"]
 }
 
-resource "aws_route53_record" "arcstage-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "arcstage.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "arc-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "alma-sftp-library-ucsb-edu-CNAME" {
