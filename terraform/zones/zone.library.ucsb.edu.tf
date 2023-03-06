@@ -358,22 +358,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.183"]
 }
 
-resource "aws_route53_record" "ns2-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ns2.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.44"]
-}
-
-resource "aws_route53_record" "ns1-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ns1.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.30"]
-}
-
 resource "aws_route53_record" "nico-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "nico.library.ucsb.edu."

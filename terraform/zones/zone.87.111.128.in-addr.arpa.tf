@@ -106,14 +106,6 @@ resource "aws_route53_record" "_46-87-111-128-in-addr-arpa-PTR" {
   records = ["kms.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_44-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "44.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["ns2.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_42-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "42.87.111.128.in-addr.arpa."
@@ -152,14 +144,6 @@ resource "aws_route53_record" "_33-87-111-128-in-addr-arpa-PTR" {
   type    = "PTR"
   ttl     = "10800"
   records = ["proxy-v.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "_30-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "30.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["ns1.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "_27-87-111-128-in-addr-arpa-PTR" {
