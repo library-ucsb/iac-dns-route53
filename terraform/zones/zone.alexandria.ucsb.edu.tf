@@ -71,7 +71,7 @@ resource "aws_route53_record" "alexandria-ucsb-edu-CNAME" {
   name    = "alexandria.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu"]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 #  All *.legacy.library.ucsb.edu requests
