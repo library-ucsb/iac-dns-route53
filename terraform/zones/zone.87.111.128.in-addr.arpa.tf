@@ -242,14 +242,6 @@ resource "aws_route53_record" "_211-87-111-128-in-addr-arpa-PTR" {
   records = ["fridgemonitor.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_206-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "206.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["epm-dev1.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_203-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "203.87.111.128.in-addr.arpa."
