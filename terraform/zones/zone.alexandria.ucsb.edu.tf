@@ -7,7 +7,7 @@ resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   name    = "www.alexandria.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["haproxyt.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
@@ -66,12 +66,12 @@ resource "aws_route53_record" "alexandria-ucsb-edu-MX" {
   records = ["1 aspmx.l.google.com.", "5 alt1.aspmx.l.google.com.", "5 alt2.aspmx.l.google.com.", "10 aspmx2.googlemail.com.", "10 aspmx3.googlemail.com."]
 }
 
-resource "aws_route53_record" "alexandria-ucsb-edu-CNAME" {
+resource "aws_route53_record" "alexandria-ucsb-edu-A" {
   zone_id = local.alex-zone_id
   name    = "alexandria.ucsb.edu."
-  type    = "CNAME"
+  type    = "A"
   ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  records = ["128.111.87.12"]
 }
 
 #  All *.legacy.library.ucsb.edu requests
