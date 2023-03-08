@@ -806,28 +806,12 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "dfsRR-dc5-library-ucsb-edu-A" {
+resource "aws_route53_record" "dfsRR-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dfs.library.ucsb.edu."
   type    = "A"
   ttl     = "10800"
-  records = ["128.111.87.118"]
-}
-
-resource "aws_route53_record" "dfsRR-dc4-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "dfs.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.117"]
-}
-
-resource "aws_route53_record" "dfsRR-dc3-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "dfs.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.119"]
+  records = ["128.111.87.117", "128.111.87.118", "128.111.87.119"]
 }
 
 resource "aws_route53_record" "dc5-library-ucsb-edu-A" {
