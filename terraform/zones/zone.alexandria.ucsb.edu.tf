@@ -7,7 +7,7 @@ resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   name    = "www.alexandria.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxyt.library.ucsb.edu."]
+  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
@@ -71,7 +71,7 @@ resource "aws_route53_record" "alexandria-ucsb-edu-A" {
   name    = "alexandria.ucsb.edu."
   type    = "A"
   ttl     = "10800"
-  records = ["128.111.87.12"]
+  records = ["128.111.87.17"]
 }
 
 #  All *.legacy.library.ucsb.edu requests
