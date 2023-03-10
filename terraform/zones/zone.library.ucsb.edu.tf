@@ -422,14 +422,6 @@ zone_id = local.library-zone_id
   records = ["haproxy1.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "merritt-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "merritt.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "maxqda-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "maxqda.library.ucsb.edu."
