@@ -470,14 +470,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.237"]
 }
 
-resource "aws_route53_record" "libwsus-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "libwsus.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.60"]
-}
-
 resource "aws_route53_record" "library-ucsb-edu-TXT" {
 zone_id = local.library-zone_id
   name    = "library.ucsb.edu."

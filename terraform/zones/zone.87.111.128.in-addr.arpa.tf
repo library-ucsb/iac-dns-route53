@@ -50,14 +50,6 @@ resource "aws_route53_record" "_71-87-111-128-in-addr-arpa-PTR" {
   records = ["openvpn2019.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_60-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "60.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["libwsus.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_59-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "59.87.111.128.in-addr.arpa."
