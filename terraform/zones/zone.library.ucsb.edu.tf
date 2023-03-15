@@ -862,25 +862,9 @@ zone_id = local.library-zone_id
   records = ["ec2-54-213-10-104.us-west-2.compute.amazonaws.com."]
 }
 
-resource "aws_route53_record" "classes-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "classes.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "cemaweb-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "cemaweb.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "building-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "building.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
