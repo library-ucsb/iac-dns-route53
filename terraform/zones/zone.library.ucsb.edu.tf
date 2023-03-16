@@ -94,14 +94,6 @@ zone_id = local.library-zone_id
   records = ["_4879fd5dd2fa87c472148a1cd79b0f28.dqxlbvzbzt.acm-validations.aws."]
 }
 
-resource "aws_route53_record" "ucsbjenkins-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "ucsbjenkins.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "ucsb-lib-openvpn-001-v352-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ucsb-lib-openvpn-001-v352.library.ucsb.edu."
@@ -556,30 +548,6 @@ zone_id = local.library-zone_id
   type    = "A"
   ttl     = "10800"
   records = ["128.111.87.190"]
-}
-
-resource "aws_route53_record" "jenkinswww-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "jenkinswww.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "jenkinsucsb-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "jenkinsucsb.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "jenkins-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "jenkins.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
