@@ -406,14 +406,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "mil-db-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "mil-db.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy1.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "maxqda-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "maxqda.library.ucsb.edu."
@@ -812,14 +804,6 @@ zone_id = local.library-zone_id
   type    = "A"
   ttl     = "10800"
   records = ["128.111.87.59"]
-}
-
-resource "aws_route53_record" "db-mil-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "db-mil.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy1.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "d42-library-ucsb-edu-CNAME" {
