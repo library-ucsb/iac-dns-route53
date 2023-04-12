@@ -558,30 +558,6 @@ zone_id = local.library-zone_id
   records = ["atlas-loadb-vei1ihcqpmza-1116913365.us-west-2.elb.amazonaws.com."]
 }
 
-resource "aws_route53_record" "haproxyt2-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxyt2.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.14"]
-}
-
-resource "aws_route53_record" "haproxyt1-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxyt1.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.13"]
-}
-
-resource "aws_route53_record" "haproxyt-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxyt.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.12"]
-}
-
 resource "aws_route53_record" "haproxy2-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "haproxy2.library.ucsb.edu."
@@ -1056,14 +1032,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "adpdevdb-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "adpdevdb.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxyt.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "adpdev-library-ucsb-edu-CNAME" {
