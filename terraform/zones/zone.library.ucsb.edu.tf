@@ -1002,6 +1002,17 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "wildcard-arc-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.arc.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "alma-sftp-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "alma-sftp.library.ucsb.edu."
