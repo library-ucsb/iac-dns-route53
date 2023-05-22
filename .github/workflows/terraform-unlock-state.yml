@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       lock_id:
-          description: lock id to unlock
-          required: true
-          type: string
-          default: ''
+        description: lock id to unlock
+        required: true
+        type: string
+        default: ''
 jobs:
   init:
     name: use terraform to unlock state
