@@ -110,12 +110,15 @@ zone_id = local.library-zone_id
   records = ["128.111.87.247"]
 }
 
-resource "aws_route53_record" "truesound-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "truesound-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "truesound.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "wildcard-truesound-library-ucsb-edu-A" {
@@ -449,12 +452,15 @@ zone_id = local.library-zone_id
   records = ["splunk-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "lobero-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "lobero-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "lobero.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "wildcard-lobero-library-ucsb-edu-A" {
@@ -1016,12 +1022,15 @@ zone_id = local.library-zone_id
   records = ["128.111.87.115"]
 }
 
-resource "aws_route53_record" "arc-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "arc-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  type    = "A"
+  alias {
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "wildcard-arc-library-ucsb-edu-A" {
