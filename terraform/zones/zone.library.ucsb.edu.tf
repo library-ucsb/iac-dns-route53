@@ -6,6 +6,10 @@ data "aws_elb" "dld-eks-ingress-nginx-v1" {
   name = "a8058ed75a0774def8ba0fb05a90144d"
 }
 
+data "aws_lb" "dld-eks-ingress-nginx-v2" {
+  name = "af38c76df6b0d473c9a2f5158c4362e1"
+}
+
 resource "aws_route53_record" "www-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "www.library.ucsb.edu."
@@ -473,7 +477,7 @@ zone_id = local.library-zone_id
     evaluate_target_health = true
   }
 }
-  
+
 resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "license-2019.library.ucsb.edu."
@@ -842,8 +846,8 @@ zone_id = local.library-zone_id
   name    = "*.blackfeminism.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_elb.dld-eks-ingress-nginx-v1.dns_name
-    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v1.zone_id
+    name                   = data.aws_elb.dld-eks-ingress-nginx-v2.dns_name
+    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v2.zone_id
     evaluate_target_health = true
   }
 }
