@@ -846,8 +846,8 @@ zone_id = local.library-zone_id
   name    = "*.blackfeminism.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_elb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_elb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
     evaluate_target_health = true
   }
 }
