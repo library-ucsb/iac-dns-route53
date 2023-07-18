@@ -2,10 +2,6 @@ locals {
   library-zone_id = aws_route53_zone.r53_zones["library-ucsb-edu"].zone_id
 }
 
-data "aws_elb" "dld-eks-ingress-nginx-v1" {
-  name = "a8058ed75a0774def8ba0fb05a90144d"
-}
-
 data "aws_lb" "dld-eks-ingress-nginx-v2" {
   name = "ab9bed8d4ef234d5ebac20d3b06b8c3e"
 }
