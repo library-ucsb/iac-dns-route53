@@ -7,7 +7,7 @@ data "aws_elb" "dld-eks-ingress-nginx-v1" {
 }
 
 data "aws_lb" "dld-eks-ingress-nginx-v2" {
-  name = "af38c76df6b0d473c9a2f5158c4362e1"
+  name = "ab9bed8d4ef234d5ebac20d3b06b8c3e"
 }
 
 resource "aws_route53_record" "www-library-ucsb-edu-A" {
