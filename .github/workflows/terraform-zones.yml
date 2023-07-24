@@ -1,9 +1,15 @@
+---
 name: "terraform: initialize and plan"
 on:
   workflow_dispatch:
+  pull_request_review:
+    types: [submitted]
+    paths:
+    - 'terraform/zones/**.tf'
     
 jobs:
   init:
+    if: github.event.review.state == 'approved'
     name: "terraform: setup, initialize, and plan"
     runs-on: ubuntu-latest 
     env:
@@ -34,3 +40,4 @@ jobs:
       - name: "terraform: plan stage"
         id: plan
         run: cd terraform/zones; terraform plan -no-color
+...
