@@ -2,8 +2,8 @@ locals {
   library-zone_id = aws_route53_zone.r53_zones["library-ucsb-edu"].zone_id
 }
 
-data "aws_lb" "dld-eks-ingress-nginx-v2" {
-  name = "ab9bed8d4ef234d5ebac20d3b06b8c3e"
+data "aws_lb" "dld-eks-ingress-nginx-v3" {
+  name = "af2378661de65473db37351e4d033ece"
 }
 
 resource "aws_route53_record" "www-library-ucsb-edu-A" {
@@ -115,8 +115,8 @@ zone_id = local.library-zone_id
   name    = "truesound.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -126,8 +126,8 @@ zone_id = local.library-zone_id
   name    = "*.truesound.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -457,8 +457,8 @@ zone_id = local.library-zone_id
   name    = "lobero.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -468,8 +468,8 @@ zone_id = local.library-zone_id
   name    = "*.lobero.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -831,8 +831,8 @@ zone_id = local.library-zone_id
   name    = "blackfeminism.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -842,8 +842,8 @@ zone_id = local.library-zone_id
   name    = "*.blackfeminism.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -853,8 +853,8 @@ zone_id = local.library-zone_id
   name    = "cylinders.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -864,8 +864,8 @@ zone_id = local.library-zone_id
   name    = "*.cylinders.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -875,8 +875,8 @@ zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -886,8 +886,8 @@ zone_id = local.library-zone_id
   name    = "*.digital.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -897,8 +897,8 @@ zone_id = local.library-zone_id
   name    = "geodata.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -908,8 +908,8 @@ zone_id = local.library-zone_id
   name    = "*.geodata.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -919,8 +919,8 @@ zone_id = local.library-zone_id
   name    = "spotlight.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -930,8 +930,8 @@ zone_id = local.library-zone_id
   name    = "*.spotlight.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -941,8 +941,8 @@ zone_id = local.library-zone_id
   name    = "spotlight-stage.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -952,8 +952,8 @@ zone_id = local.library-zone_id
   name    = "*.spotlight-stage.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -1027,8 +1027,8 @@ zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
@@ -1038,8 +1038,8 @@ zone_id = local.library-zone_id
   name    = "*.arc.library.ucsb.edu."
   type    = "A"
   alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v2.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v2.zone_id
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
 }
