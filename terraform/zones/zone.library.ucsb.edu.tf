@@ -316,6 +316,14 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "reserves-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "reserves.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["ucsb.ares.atlas-sys.com."]
+}
+
 resource "aws_route53_record" "researchspecial-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "researchspecial.library.ucsb.edu."
