@@ -356,6 +356,14 @@ zone_id = local.library-zone_id
   records = ["128.111.121.42"]
 }
 
+resource "aws_route53_record" "ezp-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "ezp.library.ucsb.edu."
+  type    = "A"
+  ttl     = "300"
+  records = ["132.174.249.166"]
+}
+
 resource "aws_route53_record" "pcut-test-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "pcut-test.library.ucsb.edu."
