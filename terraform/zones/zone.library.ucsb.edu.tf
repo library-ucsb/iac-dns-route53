@@ -352,7 +352,7 @@ resource "aws_route53_record" "proxy-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "proxy.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.121.42"]
 }
 
@@ -1164,19 +1164,11 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "wildcard-proxytmp-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "*.proxytmp.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.159"]
-}
-
 resource "aws_route53_record" "wildcard-proxy-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "*.proxy.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.121.42"]
 }
 
