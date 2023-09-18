@@ -353,7 +353,15 @@ zone_id = local.library-zone_id
   name    = "proxy.library.ucsb.edu."
   type    = "A"
   ttl     = "300"
-  records = ["128.111.121.42"]
+  records = ["132.174.249.166"]
+}
+
+resource "aws_route53_record" "wildcard-proxy-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.proxy.library.ucsb.edu."
+  type    = "A"
+  ttl     = "300"
+  records = ["132.174.249.166"]
 }
 
 resource "aws_route53_record" "ezp-library-ucsb-edu-A" {
@@ -1162,14 +1170,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "wildcard-proxy-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "*.proxy.library.ucsb.edu."
-  type    = "A"
-  ttl     = "300"
-  records = ["128.111.121.42"]
 }
 
 resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
