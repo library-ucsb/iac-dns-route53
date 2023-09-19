@@ -1046,6 +1046,14 @@ zone_id = local.library-zone_id
   records = ["128.111.87.115"]
 }
 
+resource "aws_route53_record" "ares-ssl-renewal-automation" {
+zone_id = local.library-zone_id
+  name    = "_a4049b4b051756c5a5cab7cf39878f60.ares.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_50b854b4db0fabe8a5f81aa549440366.whqzffzsdn.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "arc-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "arc.library.ucsb.edu."
