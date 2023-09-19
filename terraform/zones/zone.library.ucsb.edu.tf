@@ -1041,9 +1041,9 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "ares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ares.library.ucsb.edu."
-  type    = "A"
+  type    = "CNAME"
   ttl     = "10800"
-  records = ["128.111.87.115"]
+  records = ["da7zp5jeci7wo.cloudfront.net."]
 }
 
 resource "aws_route53_record" "ares-ssl-renewal-automation" {
