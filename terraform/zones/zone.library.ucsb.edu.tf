@@ -1030,14 +1030,6 @@ zone_id = local.library-zone_id
   records = ["filemaker-2019.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "aresdev-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "aresdev.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.245"]
-}
-
 resource "aws_route53_record" "ares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ares.library.ucsb.edu."
