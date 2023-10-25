@@ -6,10 +6,9 @@ on:
     types: [submitted]
     paths:
     - 'terraform/zones/**.tf'
-    
+
 jobs:
   init:
-    if: github.event.review.state == 'approved'
     name: "terraform: setup, initialize, and plan"
     runs-on: ubuntu-latest 
     env:
