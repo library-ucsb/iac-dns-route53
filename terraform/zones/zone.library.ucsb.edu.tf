@@ -268,6 +268,30 @@ zone_id = local.library-zone_id
   records = ["128.111.87.124"]
 }
 
+resource "aws_route53_record" "sendgrid-aeon-id-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "em7397.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["u5578462.wl213.sendgrid.net."]
+}
+
+resource "aws_route53_record" "sendgrid-aeon-dk-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "aeo._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["aeo.domainkey.u5578462.wl213.sendgrid.net."]
+}
+
+resource "aws_route53_record" "sendgrid-aeon-dk2-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "aeo2._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["aeo2.domainkey.u5578462.wl213.sendgrid.net."]
+}
+
 resource "aws_route53_record" "search-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "search.library.ucsb.edu."
