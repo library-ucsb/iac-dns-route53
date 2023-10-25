@@ -7,9 +7,6 @@ terraform {
     key             = "terraform.tfstate"
     dynamodb_table  = "ucsb-library-iac-terraform-zones-state-lock"
     profile         = ""
-    assume_role {
-      role_arn      = ""
-    }
     encrypt         = "true"
   }
 }
