@@ -918,6 +918,14 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "constantcontact-_domainkey-library-ucsb-edu-TXT" {
+zone_id = local.library-zone_id
+  name    = "2020303040._domainkey.library.ucsb.edu."
+  type    = "TXT"
+  ttl     = "10800"
+  records = ["k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCaaLHZl4YJyCBpWRrjGlx0Qw48A9cwHLnRtTL9yJU9s6clm4H592a4yHzMoosw4fqy7cmOpQCj9DqqXRW9MOsSF4UNiNS692Wl4WQulTQkAPB6+FBOXiXUhZV+RBzcFih+3uqv1dU0y5TXZ5Fu7aDv/JplWwquGO6ggGAqeON/TwIDAQAB"]
+}
+
 resource "aws_route53_record" "digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu."
