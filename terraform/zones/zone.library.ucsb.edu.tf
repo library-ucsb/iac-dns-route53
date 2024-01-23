@@ -1030,6 +1030,14 @@ zone_id = local.library-zone_id
   records = ["128.111.87.246"]
 }
 
+resource "aws_route53_record" "avcollections-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "avcollections.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["ucsb.aviaryplatform.com."]
+}
+
 resource "aws_route53_record" "atempo-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "atempo.library.ucsb.edu."
