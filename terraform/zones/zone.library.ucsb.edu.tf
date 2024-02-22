@@ -602,22 +602,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.46"]
 }
 
-resource "aws_route53_record" "jump-ops-02-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "jump-ops-02.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.191"]
-}
-
-resource "aws_route53_record" "jump-ops-01-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "jump-ops-01.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.190"]
-}
-
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "iiif-sandbox.library.ucsb.edu."
