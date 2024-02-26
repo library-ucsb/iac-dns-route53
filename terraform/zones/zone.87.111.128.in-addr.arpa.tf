@@ -186,14 +186,6 @@ resource "aws_route53_record" "_245-87-111-128-in-addr-arpa-PTR" {
   records = ["aresdev.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_24-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "24.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["ftpd-352.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_238-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "238.87.111.128.in-addr.arpa."
