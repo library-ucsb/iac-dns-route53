@@ -690,30 +690,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.199"]
 }
 
-resource "aws_route53_record" "ftpd-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "ftpd.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["ftpd-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "ftpd-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ftpd-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.24"]
-}
-
-resource "aws_route53_record" "ftp-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "ftp.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["ftpd-352.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "fridgemonitor-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "fridgemonitor.library.ucsb.edu."
