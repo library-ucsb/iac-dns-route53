@@ -314,22 +314,6 @@ resource "aws_route53_record" "_192-87-111-128-in-addr-arpa-PTR" {
   records = ["docker-vmware-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_191-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "191.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["jump-ops-02.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "_190-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "190.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["jump-ops-01.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_19-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "19.87.111.128.in-addr.arpa."
