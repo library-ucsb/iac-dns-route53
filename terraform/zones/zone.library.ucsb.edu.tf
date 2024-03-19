@@ -30,7 +30,7 @@ zone_id = local.library-zone_id
   records = ["atlas-loadb-bxukailn7wf4-118553238.us-west-2.elb.amazonaws.com."]
 }
 
-resource "aws_route53_record" "*-library-ssl-renewal-automation" {
+resource "aws_route53_record" "library-wildcard-ssl-renewal-automation" {
 zone_id = local.library-zone_id
   name    = "_1a4ae0fdc09a2579501cceb77eff2835.library.ucsb.edu."
   type    = "CNAME"
