@@ -30,6 +30,14 @@ zone_id = local.library-zone_id
   records = ["atlas-loadb-bxukailn7wf4-118553238.us-west-2.elb.amazonaws.com."]
 }
 
+resource "aws_route53_record" "*-library-ssl-renewal-automation" {
+zone_id = local.library-zone_id
+  name    = "_1a4ae0fdc09a2579501cceb77eff2835.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_cecf8d1aea6148c752cdaeb6d9e6e16a.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "we-remember-them-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "we-remember-them.library.ucsb.edu."
