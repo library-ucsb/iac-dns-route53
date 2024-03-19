@@ -4,6 +4,7 @@
 # https://github.com/cloudposse/terraform-aws-tfstate-backend#usage
 module "terraform_state_backend" {
   source                              = "cloudposse/tfstate-backend/aws"
+  version                             = "1.4.0"
   namespace                           = "ucsb-library"
   environment                         = "iac"
   stage                               = "terraform"
