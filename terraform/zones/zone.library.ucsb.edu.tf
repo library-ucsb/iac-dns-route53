@@ -308,22 +308,6 @@ zone_id = local.library-zone_id
   records = ["ucsb.primo.exlibrisgroup.com."]
 }
 
-resource "aws_route53_record" "rundeck2018-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "rundeck2018.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "rundeck-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "rundeck.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "rssh-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "rssh.library.ucsb.edu."
