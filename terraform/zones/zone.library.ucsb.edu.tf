@@ -94,14 +94,6 @@ zone_id = local.library-zone_id
   records = ["d39iun9d2ez3mk.cloudfront.net."]
 }
 
-resource "aws_route53_record" "ucsbreads-ssl-renewal-automation" {
-zone_id = local.library-zone_id
-  name    = "_10aac3b05b759cb36c75fc38c71c610d.ucsbreads.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "300"
-  records = ["_4879fd5dd2fa87c472148a1cd79b0f28.dqxlbvzbzt.acm-validations.aws."]
-}
-
 resource "aws_route53_record" "ucsb-lib-openvpn-001-v352-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ucsb-lib-openvpn-001-v352.library.ucsb.edu."
@@ -442,14 +434,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["dhksq0pztv94b.cloudfront.net."]
-}
-
-resource "aws_route53_record" "misc-ssl-renewal-automation" {
-zone_id = local.library-zone_id
-  name    = "_49b27e2fdae39611164fc7da62860333.misc.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "300"
-  records = ["_ffb5064bd38d3b8ad1786a77c4d05725.dqxlbvzbzt.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "mil-library-ucsb-edu-CNAME" {
@@ -1022,28 +1006,12 @@ zone_id = local.library-zone_id
   records = ["filemaker-2019.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "aresdev-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "aresdev.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.245"]
-}
-
 resource "aws_route53_record" "ares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ares.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
   records = ["da7zp5jeci7wo.cloudfront.net."]
-}
-
-resource "aws_route53_record" "ares-ssl-renewal-automation" {
-zone_id = local.library-zone_id
-  name    = "_a4049b4b051756c5a5cab7cf39878f60.ares.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "300"
-  records = ["_50b854b4db0fabe8a5f81aa549440366.whqzffzsdn.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "arc-library-ucsb-edu-A" {
