@@ -164,22 +164,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.132", "128.111.87.133"]
 }
 
-resource "aws_route53_record" "stream2x-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "stream2x.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.19"]
-}
-
-resource "aws_route53_record" "stream-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "stream.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["stream2x.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "status-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "status.library.ucsb.edu."
