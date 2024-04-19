@@ -148,14 +148,6 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "thoreau-remote-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "thoreau-remote.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["rssh-352.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "svmwindows-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "svmwindows.library.ucsb.edu."
@@ -282,22 +274,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["ucsb.primo.exlibrisgroup.com."]
-}
-
-resource "aws_route53_record" "rssh-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "rssh.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["rssh-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "rssh-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "rssh-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.50"]
 }
 
 resource "aws_route53_record" "reset-library-ucsb-edu-CNAME" {
@@ -1026,14 +1002,6 @@ zone_id = local.library-zone_id
   type    = "A"
   ttl     = "300"
   records = ["128.111.87.51"]
-}
-
-resource "aws_route53_record" "alma-sftp-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "alma-sftp.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["rssh-352.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "adrl-sandbox-library-ucsb-edu-A" {
