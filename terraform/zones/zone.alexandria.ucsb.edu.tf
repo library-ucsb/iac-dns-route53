@@ -2,6 +2,10 @@ locals {
   alex-zone_id = aws_route53_zone.r53_zones["alexandria-ucsb-edu"].zone_id
 }
 
+data "aws_lb" "dld-eks-ingress-nginx-v3" {
+  name = "af2378661de65473db37351e4d033ece"
+}
+
 # refer to zone.library.ucsb.edu.tf for aws_lb data definition
 resource "aws_route53_record" "piru-alexandria-ucsb-edu-A" {
 zone_id = local.library-zone_id
