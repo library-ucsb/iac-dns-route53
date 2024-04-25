@@ -2,6 +2,18 @@ locals {
   alex-zone_id = aws_route53_zone.r53_zones["alexandria-ucsb-edu"].zone_id
 }
 
+# refer to zone.library.ucsb.edu.tf for aws_lb data definition
+resource "aws_route53_record" "wildcard-eks-dld-alexandria-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "*.eks.dld.alexandria.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   zone_id = local.alex-zone_id
   name    = "www.alexandria.ucsb.edu."
