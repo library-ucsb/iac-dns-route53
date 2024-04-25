@@ -3,9 +3,9 @@ locals {
 }
 
 # refer to zone.library.ucsb.edu.tf for aws_lb data definition
-resource "aws_route53_record" "wildcard-eks-dld-alexandria-ucsb-edu-A" {
+resource "aws_route53_record" "piru-alexandria-ucsb-edu-A" {
 zone_id = local.library-zone_id
-  name    = "*.eks.dld.alexandria.ucsb.edu."
+  name    = "piru.alexandria.ucsb.edu."
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
