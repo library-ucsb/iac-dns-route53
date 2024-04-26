@@ -19,7 +19,7 @@ resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
 }
 
 resource "aws_route53_record" "pirutest-alexandria-ucsb-edu-A" {
-zone_id = local.library-zone_id
+zone_id = local.alex-zone_id
   name    = "pirutest.alexandria.ucsb.edu."
   type    = "A"
   alias {
