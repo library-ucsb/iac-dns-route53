@@ -18,23 +18,15 @@ resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
   records = ["ftpd-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "pirutest-alexandria-ucsb-edu-A" {
+resource "aws_route53_record" "piru-alexandria-ucsb-edu-A" {
 zone_id = local.alex-zone_id
-  name    = "pirutest.alexandria.ucsb.edu."
+  name    = "piru.alexandria.ucsb.edu."
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
     zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
-}
-
-resource "aws_route53_record" "piru-alexandria-ucsb-edu-CNAME" {
-  zone_id = local.alex-zone_id
-  name    = "piru.alexandria.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "legacy-alexandria-ucsb-edu-CNAME" {
