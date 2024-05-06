@@ -399,12 +399,26 @@ zone_id = local.library-zone_id
   records = ["dhksq0pztv94b.cloudfront.net."]
 }
 
-resource "aws_route53_record" "mil-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "mil-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "mil.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "mil-staging-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "mil-staging.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "maxqda-library-ucsb-edu-CNAME" {
