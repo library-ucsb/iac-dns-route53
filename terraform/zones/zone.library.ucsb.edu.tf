@@ -948,7 +948,7 @@ zone_id = local.library-zone_id
   name    = "avcollections.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["ucsb.aviaryplatform.com."]
+  records = ["ucsblibrary.aviaryplatform.com."]
 }
 
 resource "aws_route53_record" "atempo-library-ucsb-edu-A" {
