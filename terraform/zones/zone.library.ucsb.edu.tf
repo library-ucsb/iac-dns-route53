@@ -1013,14 +1013,6 @@ zone_id = local.library-zone_id
   }
 }
 
-resource "aws_route53_record" "sftp-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "sftp.library.ucsb.edu."
-  type    = "A"
-  ttl     = "300"
-  records = ["128.111.87.51"]
-}
-
 resource "aws_route53_record" "adrl-sandbox-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "adrl-sandbox.library.ucsb.edu."
