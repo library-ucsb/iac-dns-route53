@@ -38,6 +38,14 @@ zone_id = local.library-zone_id
   records = ["_cecf8d1aea6148c752cdaeb6d9e6e16a.acm-validations.aws."]
 }
 
+resource "aws_route53_record" "_acme-challenge-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_acme-challenge.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_acme-challenge.acmevalidation.ets.ucsb.edu."]
+}
+
 resource "aws_route53_record" "we-remember-them-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "we-remember-them.library.ucsb.edu."
