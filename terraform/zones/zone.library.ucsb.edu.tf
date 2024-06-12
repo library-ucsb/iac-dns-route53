@@ -720,7 +720,7 @@ zone_id = local.library-zone_id
   name    = "epm.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
+  records = ["proxyserver.ets.ucsb.edu."]
 }
 
 resource "aws_route53_record" "dfsRR-library-ucsb-edu-A" {
