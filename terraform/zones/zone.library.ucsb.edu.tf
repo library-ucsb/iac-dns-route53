@@ -1061,6 +1061,14 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "assets-adp-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "assets.adp.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["d1h02xlhn2xtdb.cloudfront.net."]
+}
+
 resource "aws_route53_record" "_acme-challenge-www-library-ucsb-edu-TXT" {
 zone_id = local.library-zone_id
   name    = "_acme-challenge.www.library.ucsb.edu."
