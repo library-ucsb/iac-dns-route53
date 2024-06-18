@@ -1061,9 +1061,9 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "assets-adp-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "adp-assets-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
-  name    = "assets.adp.library.ucsb.edu."
+  name    = "adp-assets.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "360"
   records = ["d1h02xlhn2xtdb.cloudfront.net."]
