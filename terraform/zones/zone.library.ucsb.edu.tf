@@ -102,6 +102,14 @@ zone_id = local.library-zone_id
   records = ["d39iun9d2ez3mk.cloudfront.net."]
 }
 
+resource "aws_route53_record" "libfsx1-1-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "libfsx1-1.library.ucsb.edu."
+  type    = "A"
+  ttl     = "10800"
+  records = ["10.226.41.173"]
+}
+
 resource "aws_route53_record" "ucsb-lib-openvpn-001-v352-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ucsb-lib-openvpn-001-v352.library.ucsb.edu."
