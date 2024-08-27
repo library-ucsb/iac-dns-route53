@@ -35,22 +35,7 @@ resource "aws_route53_record" "legacy-alexandria-ucsb-edu-cloudfront-CNAME" {
   type    = "CNAME"
   ttl     = "10800"
   records = ["_633c924c0d54b711422966e745e0f692.kdbplsmznr.acm-validations.aws."]
-}
 
-resource "aws_route53_record" "collections-alexandria-ucsb-edu-CNAME" {
-  zone_id = local.alex-zone_id
-  name    = "collections.alexandria.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["collections-2.alexandria.ucsb.edu."]
-}
-
-resource "aws_route53_record" "collections-2-alexandria-ucsb-edu-A" {
-  zone_id = local.alex-zone_id
-  name    = "collections-2.alexandria.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.128"]
 }
 
 resource "aws_route53_record" "alexandria-ucsb-edu-MX" {
