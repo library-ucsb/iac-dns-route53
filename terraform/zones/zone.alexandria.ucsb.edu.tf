@@ -10,14 +10,6 @@ resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "ucftp-alexandria-ucsb-edu-CNAME" {
-  zone_id = local.alex-zone_id
-  name    = "ucftp.alexandria.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["ftpd-352.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "piru-alexandria-ucsb-edu-A" {
 zone_id = local.alex-zone_id
   name    = "piru.alexandria.ucsb.edu."
