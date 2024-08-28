@@ -362,14 +362,6 @@ resource "aws_route53_record" "_171-87-111-128-in-addr-arpa-PTR" {
   records = ["libcat-dev.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "_17-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "17.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["adrl-demo.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "_168-87-111-128-in-addr-arpa-PTR" {
   zone_id = local.rev87-zone_id
   name    = "168.87.111.128.in-addr.arpa."
@@ -560,14 +552,6 @@ resource "aws_route53_record" "_115-87-111-128-in-addr-arpa-PTR" {
   type    = "PTR"
   ttl     = "10800"
   records = ["ares.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "_107-87-111-128-in-addr-arpa-PTR" {
-  zone_id = local.rev87-zone_id
-  name    = "107.87.111.128.in-addr.arpa."
-  type    = "PTR"
-  ttl     = "10800"
-  records = ["adrl-sandbox.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "_103-87-111-128-in-addr-arpa-PTR" {
