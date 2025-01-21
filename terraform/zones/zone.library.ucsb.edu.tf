@@ -571,6 +571,17 @@ zone_id = local.library-zone_id
   records = ["live-lauc-library-ucsb-edu-v01.pantheonsite.io."]
 }
 
+resource "aws_route53_record" "lauc-test-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "lauc-test.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "l3vffdmeidbrtg2rgh5ralxr4yxtpfkz-_domainkey-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "l3vffdmeidbrtg2rgh5ralxr4yxtpfkz._domainkey.library.ucsb.edu."
