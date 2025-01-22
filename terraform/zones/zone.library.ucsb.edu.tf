@@ -563,17 +563,9 @@ zone_id = local.library-zone_id
   records = ["128.111.87.17"]
 }
 
-resource "aws_route53_record" "lauc-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "lauc-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "lauc.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["live-lauc-library-ucsb-edu-v01.pantheonsite.io."]
-}
-
-resource "aws_route53_record" "lauc-test-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "lauc-test.library.ucsb.edu."
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
