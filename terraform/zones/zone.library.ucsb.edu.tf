@@ -520,7 +520,7 @@ zone_id = local.library-zone_id
   name    = "library.ucsb.edu."
   type    = "TXT"
   ttl     = "10800"
-  records = ["v=spf1 a mx include:_spf.ucsb.edu include:spf-na.exlibrisgroup.com ~all", "atlassian-domain-verification=ZIaUbbkrYS6DgSxHx1eKL1A57BO3OaXGLHygBLZ6xui3OkJM81ApVKLKDlU3EySM", "MS=D7F719CF8E6A69269B750C38B2D2718450464065", "apple-domain-verification=pNUAObZKnm3Mbhau"]
+  records = ["v=spf1 a mx include:_spf.ucsb.edu include:spf-na.exlibrisgroup.com ~all", "atlassian-domain-verification=ZIaUbbkrYS6DgSxHx1eKL1A57BO3OaXGLHygBLZ6xui3OkJM81ApVKLKDlU3EySM", "MS=D7F719CF8E6A69269B750C38B2D2718450464065", "apple-domain-verification=pNUAObZKnm3Mbhau", "f888256c-024a-4d8e-a34f-3c24ea4ed01d"]
 }
 
 resource "aws_route53_record" "library-ucsb-edu-MX" {
