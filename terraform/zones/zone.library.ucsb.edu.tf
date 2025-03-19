@@ -131,7 +131,7 @@ zone_id = local.library-zone_id
   name    = "carpentry.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["carpentry-library.library.ucsb.edu."]
+  records = ["ucsbcarpentry.github.io."]
 }
 
 resource "aws_route53_record" "ucsb-lib-openvpn-001-v352-library-ucsb-edu-A" {
