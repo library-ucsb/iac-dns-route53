@@ -142,14 +142,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.80"]
 }
 
-resource "aws_route53_record" "ucsb-lib-lm-collector-1-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "ucsb-lib-lm-collector-1.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.247"]
-}
-
 resource "aws_route53_record" "truesound-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "truesound.library.ucsb.edu."
