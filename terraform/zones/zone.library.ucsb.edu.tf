@@ -311,14 +311,6 @@ zone_id = local.library-zone_id
   records = ["ucsb.primo.exlibrisgroup.com."]
 }
 
-resource "aws_route53_record" "reset-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "reset.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "reserves-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "reserves.library.ucsb.edu."
