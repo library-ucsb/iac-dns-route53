@@ -1059,6 +1059,14 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "adp-waf-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "adp-waf.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "60"
+  records = ["dkb8m8gcmkklk.cloudfront.net."]
+}
+
 resource "aws_route53_record" "adp-assets-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "adp-assets.library.ucsb.edu."
