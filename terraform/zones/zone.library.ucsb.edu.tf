@@ -247,22 +247,6 @@ zone_id = local.library-zone_id
   records = ["sshgw-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "splunk-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "splunk.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["splunk-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "splunk-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "splunk-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.48"]
-}
-
 resource "aws_route53_record" "sendmail-relay-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "sendmail-relay.library.ucsb.edu."
@@ -459,22 +443,6 @@ zone_id = local.library-zone_id
   type    = "A"
   ttl     = "10800"
   records = ["128.111.97.222"]
-}
-
-resource "aws_route53_record" "logserver-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "logserver.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["splunk-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "logs-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "logs.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["splunk-352.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "lobero-library-ucsb-edu-A" {
