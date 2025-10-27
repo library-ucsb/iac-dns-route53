@@ -702,6 +702,38 @@ zone_id = local.library-zone_id
   records = ["proxyserver.ets.ucsb.edu."]
 }
 
+resource "aws_route53_record" "emma1-domainkey-CNAME" {
+zone_id = local.library-zone_id
+  name    = "e2ma-k1._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["e2ma-k1.dkim.e2ma.net."]
+}
+
+resource "aws_route53_record" "emma2-domainkey-CNAME" {
+zone_id = local.library-zone_id
+  name    = "e2ma-k2._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["e2ma-k2.dkim.e2ma.net."]
+}
+
+resource "aws_route53_record" "emma3-domainkey-CNAME" {
+zone_id = local.library-zone_id
+  name    = "e2ma-k3._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["e2ma-k3.dkim.e2ma.net."]
+}
+
+resource "aws_route53_record" "emma-verification-TXT" {
+zone_id = local.library-zone_id
+  name    = "@"
+  type    = "TXT"
+  ttl     = "360"
+  records = ["e2ma-verification=pptgb"]
+}
+
 resource "aws_route53_record" "dfsRR-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "dfs.library.ucsb.edu."
