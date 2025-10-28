@@ -94,6 +94,22 @@ zone_id = local.library-zone_id
   records = ["d2isjfozjvdahq.cloudfront.net."]
 }
 
+resource "aws_route53_record" "victorledgers-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_4b4ea0561d00356463dfcd9416d607ea.victorledgers.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["_0d00aeaa0ee36d8350fcee1079b8b4af.jkddzztszm.acm-validations.aws."]
+}
+
+resource "aws_route53_record" "victorledgers-validation-poc-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_d5124faf9beee243eddfaa7bae1c7623.victorledgers-poc.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["_ff2c0f168fb95ced1d0f986e3086a799.jkddzztszm.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "victor-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "victor.library.ucsb.edu."
