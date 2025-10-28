@@ -91,7 +91,7 @@ zone_id = local.library-zone_id
   name    = "victorledgers-poc.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "360"
-  records = ["."]
+  records = ["d2isjfozjvdahq.cloudfront.net."]
 }
 
 resource "aws_route53_record" "victor-library-ucsb-edu-CNAME" {
