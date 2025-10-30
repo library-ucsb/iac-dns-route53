@@ -391,12 +391,28 @@ zone_id = local.library-zone_id
   records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "nico-server-library-ucsb-edu-CNAME" {
+resource "aws_route53_record" "nico-poc-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
-  name    = "nico-server.library.ucsb.edu."
+  name    = "nico-poc.library.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  ttl     = "300"
+  records = ["d3gi2qsnsu9c5w.cloudfront.net."]
+}
+
+resource "aws_route53_record" "nico-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_0ffeb93f7b9ee6c9abcf137b9510e44c.nico.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_d33a3f7a706483e4107d969f7250a431.jkddzztszm.acm-validations.aws."]
+}
+
+resource "aws_route53_record" "nico-poc-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_cae30381e635a09112de76ab2c8c821a.nico-poc.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_6379a708be393a879134b578f1e4e0b3.jkddzztszm.acm-validations.aws."]
 }
 
 resource "aws_route53_record" "nginxlb-library-ucsb-edu-A" {
