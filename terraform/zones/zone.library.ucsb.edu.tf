@@ -118,6 +118,30 @@ zone_id = local.library-zone_id
   records = ["haproxy.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "victor-legacy-poc-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "victor-legacy-poc.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["dsxdy9ji88qc1.cloudfront.net"]
+}
+
+resource "aws_route53_record" "victor-legacy-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_abf13162819e287d41ad0c1e47da73d6.victor-legacy.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["_4ef748c104f489e0a6463efb744d2da0.jkddzztszm.acm-validations.aws."]
+}
+
+resource "aws_route53_record" "victor-legacy-poc-validation-poc-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_5c2cf02d9f49f14623da79264e2fa62f.victor-legacy-poc.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "360"
+  records = ["_ea87f8887d6b8952e0853532803bc9aa.jkddzztszm.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "ucsbreads-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
