@@ -82,8 +82,8 @@ resource "aws_route53_record" "victorledgers-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "victorledgers.library.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  ttl     = "360"
+  records = ["d2isjfozjvdahq.cloudfront.net."]
 }
 
 resource "aws_route53_record" "victorledgers-poc-library-ucsb-edu-CNAME" {
