@@ -1062,30 +1062,7 @@ zone_id = local.library-zone_id
     zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
     evaluate_target_health = true
   }
-}
 
-resource "aws_route53_record" "adpprod2-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "adpprod2.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "adpprod1-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "adpprod1.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "adpdev-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "adpdev.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "adp-library-ucsb-edu-A" {
