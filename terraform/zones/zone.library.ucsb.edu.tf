@@ -271,22 +271,6 @@ zone_id = local.library-zone_id
   records = ["sshgw-352.library.ucsb.edu."]
 }
 
-resource "aws_route53_record" "sendmail-relay-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "sendmail-relay.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["sendmail-relay-352.library.ucsb.edu."]
-}
-
-resource "aws_route53_record" "sendmail-relay-352-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "sendmail-relay-352.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.124"]
-}
-
 resource "aws_route53_record" "sendgrid-aeon-id-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "em7397.library.ucsb.edu."
