@@ -752,7 +752,7 @@ zone_id = local.library-zone_id
 
 resource "aws_route53_record" "emma-verification-TXT" {
 zone_id = local.library-zone_id
-  name    = "@"
+  name    = "library.ucsb.edu"
   type    = "TXT"
   ttl     = "360"
   records = ["e2ma-verification=pptgb"]
