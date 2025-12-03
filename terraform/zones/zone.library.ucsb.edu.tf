@@ -110,14 +110,6 @@ zone_id = local.library-zone_id
   records = ["_ff2c0f168fb95ced1d0f986e3086a799.jkddzztszm.acm-validations.aws."]
 }
 
-resource "aws_route53_record" "victor-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "victor.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "ucsbreads-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "ucsbreads.library.ucsb.edu."
@@ -221,14 +213,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["wdc4kd3zsrn9.stspg-customer.com."]
-}
-
-resource "aws_route53_record" "starlight-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "starlight.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "staffprint1-library-ucsb-edu-A" {
@@ -588,30 +572,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["atlas-loadb-vei1ihcqpmza-1116913365.us-west-2.elb.amazonaws.com."]
-}
-
-resource "aws_route53_record" "haproxy2-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxy2.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.250"]
-}
-
-resource "aws_route53_record" "haproxy1-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxy1.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.249"]
-}
-
-resource "aws_route53_record" "haproxy-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "haproxy.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.248"]
 }
 
 resource "aws_route53_record" "guides-library-ucsb-edu-CNAME" {
@@ -994,14 +954,6 @@ zone_id = local.library-zone_id
   records = ["128.111.87.192"]
 }
 
-resource "aws_route53_record" "arscstage-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "arscstage.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "arsc-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "arsc.library.ucsb.edu."
@@ -1106,14 +1058,6 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "10800"
   records = ["3ettaxfr6s43fvjdkithnbm5wpmcvtkb.dkim.amazonses.com."]
-}
-
-resource "aws_route53_record" "wildcard-victor-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "*.victor.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["haproxy.library.ucsb.edu."]
 }
 
 resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
