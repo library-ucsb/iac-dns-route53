@@ -996,20 +996,9 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "adp-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "adp.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
-    evaluate_target_health = true
-  }
-}
-
-resource "aws_route53_record" "adp-waf-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "adp-waf.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "60"
-  records = ["dkb8m8gcmkklk.cloudfront.net."]
+  records = ["d1h02xlhn2xtdb.cloudfront.net."]
 }
 
 resource "aws_route53_record" "adp-assets-library-ucsb-edu-CNAME" {
