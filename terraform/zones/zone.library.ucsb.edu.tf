@@ -441,7 +441,7 @@ resource "aws_route53_record" "maxqda-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "maxqda.library.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["license-2019.library.ucsb.edu."]
 }
 
