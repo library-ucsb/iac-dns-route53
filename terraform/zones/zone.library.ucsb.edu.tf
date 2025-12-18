@@ -479,8 +479,9 @@ resource "aws_route53_record" "license-2019-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "license-2019.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.87.237"]
+# records = ["10.226.55.158"]
 }
 
 resource "aws_route53_record" "library-ucsb-edu-TXT" {
@@ -554,8 +555,9 @@ resource "aws_route53_record" "kms-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "kms.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.87.46"]
+# records = ["10.226.55.217"]
 }
 
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
