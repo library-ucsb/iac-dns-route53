@@ -287,6 +287,14 @@ zone_id = local.library-zone_id
   records = ["ucsb.primo.exlibrisgroup.com."]
 }
 
+resource "aws_route53_record" "_incommon-search-library-ucsb-edu-TXT" {
+zone_id = local.library-zone_id
+  name    = "_incommon.search.library.ucsb.edu."
+  type    = "TXT"
+  ttl     = "10800"
+  records = ["incommon-dcv=OrMnGiTCKmjfOUapzwIK"]
+}
+
 resource "aws_route53_record" "reserves-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "reserves.library.ucsb.edu."
