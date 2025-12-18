@@ -443,6 +443,7 @@ zone_id = local.library-zone_id
   type    = "CNAME"
   ttl     = "300"
   records = ["license-2019.library.ucsb.edu."]
+# records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
 }
 
 resource "aws_route53_record" "managefilemaker-library-ucsb-edu-A" {
@@ -660,8 +661,9 @@ resource "aws_route53_record" "mathematica-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "mathematica.library.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["license-2019.library.ucsb.edu."]
+# records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
 }
 
 resource "aws_route53_record" "epm2-library-ucsb-edu-A" {
