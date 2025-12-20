@@ -450,8 +450,7 @@ zone_id = local.library-zone_id
   name    = "maxqda.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "300"
-  records = ["license-2019.library.ucsb.edu."]
-# records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
+  records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
 }
 
 resource "aws_route53_record" "managefilemaker-library-ucsb-edu-A" {
@@ -489,8 +488,7 @@ zone_id = local.library-zone_id
   name    = "license-2019.library.ucsb.edu."
   type    = "A"
   ttl     = "300"
-  records = ["128.111.87.237"]
-# records = ["10.226.55.158"]
+  records = ["10.226.55.158"]
 }
 
 resource "aws_route53_record" "library-ucsb-edu-TXT" {
@@ -565,8 +563,7 @@ zone_id = local.library-zone_id
   name    = "kms.library.ucsb.edu."
   type    = "A"
   ttl     = "300"
-  records = ["128.111.87.46"]
-# records = ["10.226.55.217"]
+  records = ["10.226.55.217"]
 }
 
 resource "aws_route53_record" "iiif-sandbox-library-ucsb-edu-A" {
@@ -670,8 +667,7 @@ zone_id = local.library-zone_id
   name    = "mathematica.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "300"
-  records = ["license-2019.library.ucsb.edu."]
-# records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
+  records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
 }
 
 resource "aws_route53_record" "epm2-library-ucsb-edu-A" {
