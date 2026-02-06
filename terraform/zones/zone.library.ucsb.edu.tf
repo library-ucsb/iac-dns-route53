@@ -457,7 +457,7 @@ resource "aws_route53_record" "managefilemaker-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "managefilemaker.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.97.222"]
 }
 
@@ -626,7 +626,7 @@ resource "aws_route53_record" "gateway-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "gateway.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.87.199"]
 }
 
@@ -642,7 +642,7 @@ resource "aws_route53_record" "filemaker-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "filemaker.library.ucsb.edu."
   type    = "CNAME"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["filemaker-2019.library.ucsb.edu."]
 }
 
@@ -650,7 +650,7 @@ resource "aws_route53_record" "filemaker-2019-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "filemaker-2019.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
+  ttl     = "300"
   records = ["128.111.87.168"]
 }
 
