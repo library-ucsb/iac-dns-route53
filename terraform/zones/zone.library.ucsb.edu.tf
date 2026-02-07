@@ -458,7 +458,7 @@ zone_id = local.library-zone_id
   name    = "managefilemaker.library.ucsb.edu."
   type    = "A"
   ttl     = "300"
-  records = ["128.111.97.222"]
+  records = ["10.226.56.152"]
 }
 
 resource "aws_route53_record" "lobero-library-ucsb-edu-A" {
