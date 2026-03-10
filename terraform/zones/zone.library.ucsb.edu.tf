@@ -126,22 +126,6 @@ zone_id = local.library-zone_id
   records = ["10.226.41.173"]
 }
 
-resource "aws_route53_record" "datadog-library-library-ucsb-edu-A" {
-zone_id = local.library-zone_id
-  name    = "datadog-library.library.ucsb.edu."
-  type    = "A"
-  ttl     = "10800"
-  records = ["128.111.123.36"]
-}
-
-resource "aws_route53_record" "datadog-library-ucsb-edu-CNAME" {
-zone_id = local.library-zone_id
-  name    = "datadog.library.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["datadog-library.library.ucsb.edu."]
-}
-
 resource "aws_route53_record" "carpentry-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "carpentry.library.ucsb.edu."
