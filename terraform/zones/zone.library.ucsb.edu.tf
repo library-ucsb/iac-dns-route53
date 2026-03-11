@@ -1049,6 +1049,22 @@ zone_id = local.library-zone_id
   records = ["3ettaxfr6s43fvjdkithnbm5wpmcvtkb.dkim.amazonses.com."]
 }
 
+resource "aws_route53_record" "sforce-library-k1-domainkey-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "sforce-library-k1._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["sforce-library-k1.uqv07g.custdkim.salesforce.com."]
+}
+
+resource "aws_route53_record" "sforce-library-k2-domainkey-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "sforce-library-k2._domainkey.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["sforce-library-k2.ht1v4y.custdkim.salesforce.com."]
+}
+
 resource "aws_route53_record" "delegation-ops-library-ucsb-edu-NS" {
   zone_id = local.library-zone_id
   name    = "ops.library.ucsb.edu"
