@@ -627,7 +627,7 @@ zone_id = local.library-zone_id
   name    = "filemaker-lb.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "300"
-  records = ["filemaker-2019.library.ucsb.edu."]
+  records = ["prod-p1p2-nlb1-b4daa64f1b2c25fc.elb.us-west-2.amazonaws.com."]
 }
 
 resource "aws_route53_record" "filemaker-library-ucsb-edu-CNAME" {
@@ -643,7 +643,7 @@ zone_id = local.library-zone_id
   name    = "filemaker-2019.library.ucsb.edu."
   type    = "A"
   ttl     = "300"
-  records = ["128.111.87.168"]
+  records = ["10.226.56.150"]
 }
 
 resource "aws_route53_record" "esri-library-ucsb-edu-CNAME" {
