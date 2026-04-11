@@ -134,6 +134,14 @@ zone_id = local.library-zone_id
   records = ["ucsbcarpentry.github.io."]
 }
 
+resource "aws_route53_record" "sys18-2022-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "sys18-2022.library.ucsb.edu."
+  type    = "A"
+  ttl     = "300"
+  records = ["10.226.63.138"]
+}
+
 resource "aws_route53_record" "ucsb-lib-openvpn-001-v352-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "ucsb-lib-openvpn-001-v352.library.ucsb.edu."
