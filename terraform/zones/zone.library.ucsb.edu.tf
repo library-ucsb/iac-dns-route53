@@ -630,6 +630,14 @@ zone_id = local.library-zone_id
   records = ["128.111.87.211"]
 }
 
+resource "aws_route53_record" "filemaker-api-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_05d3dab8091f56743ac96f75f1d71c98.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_81545be319331bd94cc7fa21f6a4c59d.jkddzztszm.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "filemaker-lb-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "filemaker-lb.library.ucsb.edu."
