@@ -445,6 +445,14 @@ zone_id = local.library-zone_id
   records = ["prod-p3p4-nlb1-1ca6485fdfa91c0e.elb.us-west-2.amazonaws.com."]
 }
 
+resource "aws_route53_record" "managemark-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "managemark.library.ucsb.edu."
+  type    = "A"
+  ttl     = "300"
+  records = ["128.111.87.75"]
+}
+
 resource "aws_route53_record" "managefilemaker-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "managefilemaker.library.ucsb.edu."
