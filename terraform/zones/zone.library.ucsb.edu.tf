@@ -18,8 +18,8 @@ resource "aws_route53_record" "winshares-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "winshares.library.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.95"]
+  ttl     = "300"
+  records = ["0.0.0.0"]
 }
 
 resource "aws_route53_record" "wiki-aws-library-ucsb-edu-CNAME" {
