@@ -710,6 +710,14 @@ zone_id = local.library-zone_id
   records = ["128.111.87.177"]
 }
 
+resource "aws_route53_record" "epm-validation-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "_f84e1d4dfbb55bb1604436903c17fc7b.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["_3c351a0e4263e31a8efdc64ec8f4cb0b.jkddzztszm.acm-validations.aws."]
+}
+
 resource "aws_route53_record" "epm-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "epm.library.ucsb.edu."
