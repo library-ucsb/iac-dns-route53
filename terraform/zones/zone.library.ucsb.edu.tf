@@ -888,6 +888,17 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "digital-sandbox-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "digital-sandbox.library.ucsb.edu."
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
+}
+
 resource "aws_route53_record" "geodata-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "geodata.library.ucsb.edu."
