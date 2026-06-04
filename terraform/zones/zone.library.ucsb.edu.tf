@@ -723,7 +723,7 @@ zone_id = local.library-zone_id
   name    = "epm.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "10800"
-  records = ["proxyserver.ets.ucsb.edu."]
+  records = ["proxyserver-alb-711689343.us-west-2.elb.amazonaws.com."]
 }
 
 resource "aws_route53_record" "emma1-domainkey-CNAME" {
