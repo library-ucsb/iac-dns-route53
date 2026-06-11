@@ -888,6 +888,14 @@ zone_id = local.library-zone_id
   }
 }
 
+resource "aws_route53_record" "digital-qa-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "digital-qa.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "3600"
+  records = ["d2myxifoj5g4n7.cloudfront.net."]
+}
+
 resource "aws_route53_record" "geodata-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "geodata.library.ucsb.edu."
