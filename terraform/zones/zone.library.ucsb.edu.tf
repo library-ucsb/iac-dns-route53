@@ -6,6 +6,14 @@ data "aws_lb" "dld-eks-ingress-nginx-v3" {
   name = "af2378661de65473db37351e4d033ece"
 }
 
+resource "aws_route53_record" "jump-vpn-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "jump-vpn.library.ucsb.edu."
+  type    = "A"
+  ttl     = "300"
+  records = ["128.111.87.2"]
+}
+
 resource "aws_route53_record" "www-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "www.library.ucsb.edu."
