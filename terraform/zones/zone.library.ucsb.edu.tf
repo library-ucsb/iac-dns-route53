@@ -869,6 +869,7 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital.library.ucsb.edu."
+  ttl     = "300"
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
@@ -880,6 +881,7 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "wildcard-digital-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "*.digital.library.ucsb.edu."
+  ttl     = "300"
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
@@ -891,6 +893,7 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "digital-qa-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital-qa.library.ucsb.edu."
+  ttl     = "300"
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
@@ -902,6 +905,7 @@ zone_id = local.library-zone_id
 resource "aws_route53_record" "digital-sandbox-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "digital-sandbox.library.ucsb.edu."
+  ttl     = "300"
   type    = "A"
   alias {
     name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
