@@ -888,15 +888,12 @@ zone_id = local.library-zone_id
   }
 }
 
-resource "aws_route53_record" "digital-qa-library-ucsb-edu-A" {
+resource "aws_route53_record" "digital-qa-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "digital-qa.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
-    evaluate_target_health = true
-  }
+  type    = "CNAME"
+  ttl     = "60"
+  records = ["d2hbqwilzokzd.cloudfront.net."]
 }
 
 resource "aws_route53_record" "digital-sandbox-library-ucsb-edu-CNAME" {
