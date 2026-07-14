@@ -1,4 +1,4 @@
-name: "unlock a broken state file"
+name: "remove lock from stuck tf state file caused by interrupted plan/apply workflow"
 on:
   workflow_dispatch:
     inputs:
