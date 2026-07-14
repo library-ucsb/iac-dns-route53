@@ -866,15 +866,12 @@ zone_id = local.library-zone_id
   records = ["k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCaaLHZl4YJyCBpWRrjGlx0Qw48A9cwHLnRtTL9yJU9s6clm4H592a4yHzMoosw4fqy7cmOpQCj9DqqXRW9MOsSF4UNiNS692Wl4WQulTQkAPB6+FBOXiXUhZV+RBzcFih+3uqv1dU0y5TXZ5Fu7aDv/JplWwquGO6ggGAqeON/TwIDAQAB"]
 }
 
-resource "aws_route53_record" "digital-library-ucsb-edu-A" {
+resource "aws_route53_record" "digital-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
-  name    = "digital.library.ucsb.edu."
-  type    = "A"
-  alias {
-    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
-    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
-    evaluate_target_health = true
-  }
+  name    = "digital-qa.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "60"
+  records = ["d3n3yqcjay6msp.cloudfront.net."]
 }
 
 resource "aws_route53_record" "wildcard-digital-library-ucsb-edu-A" {
