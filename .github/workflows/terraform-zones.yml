@@ -1,11 +1,14 @@
----
-name: "terraform: initialize and plan"
+name: "test updates to zones files"
 on:
   workflow_dispatch:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types: [opened]
     paths:
     - 'terraform/zones/**.tf'
+
+concurrency:
+  group: terraform-state-zones
+  queue: max
 
 jobs:
   init:
@@ -27,7 +30,7 @@ jobs:
 
       - name: checkout branch
         uses: actions/checkout@v3
-          
+
       - name: "terraform: installing"
         uses: hashicorp/setup-terraform@v2
 
@@ -35,8 +38,7 @@ jobs:
         run: cd terraform/zones; terraform init -upgrade
         env:
           TFE_TOKEN: ${{ secrets.TFE_TOKEN }}        
-    
+
       - name: "terraform: plan stage"
         id: plan
         run: cd terraform/zones; terraform plan -no-color
-...

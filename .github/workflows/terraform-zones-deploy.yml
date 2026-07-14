@@ -1,4 +1,4 @@
-name: "terraform: initialize and apply"
+name: "apply changes to zones files using terraform apply"
 on:
   push:
     branches:
@@ -6,6 +6,10 @@ on:
     paths:
       - 'terraform/**'
       - '!.github/workflows/terraform-*.yml'
+
+concurrency:
+  group: terraform-state-zones
+  queue: max
 
 jobs:
   init:
