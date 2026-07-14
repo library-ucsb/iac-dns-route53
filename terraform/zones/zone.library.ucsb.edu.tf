@@ -868,7 +868,7 @@ zone_id = local.library-zone_id
 
 resource "aws_route53_record" "digital-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
-  name    = "digital-qa.library.ucsb.edu."
+  name    = "digital.library.ucsb.edu."
   type    = "CNAME"
   ttl     = "60"
   records = ["d3n3yqcjay6msp.cloudfront.net."]
