@@ -1046,6 +1046,22 @@ zone_id = local.library-zone_id
 
 }
 
+resource "aws_route53_record" "archives-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "archives.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["ucsb.as.atlas-sys.com."]
+}
+
+resource "aws_route53_record" "_acme-challenge-archives-library-ucsb-edu-TXT" {
+zone_id = local.library-zone_id
+  name    = "_acme-challenge.archives.library.ucsb.edu."
+  type    = "TXT"
+  ttl     = "10800"
+  records = ["vcuxzN1Hldp4Qp43qS3_q5vlrF2ZZ9fmUVwTn62pm6U"]
+}
+
 resource "aws_route53_record" "alexandria-library-ucsb-edu-A" {
 zone_id = local.library-zone_id
   name    = "alexandria.library.ucsb.edu."
