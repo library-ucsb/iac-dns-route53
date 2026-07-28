@@ -78,6 +78,14 @@ zone_id = local.library-zone_id
   records = ["ucsb-lib-openvpn-001-v352.library.ucsb.edu."]
 }
 
+resource "aws_route53_record" "dataverse-library-ucsb-edu-CNAME" {
+zone_id = local.library-zone_id
+  name    = "dataverse.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "10800"
+  records = ["dataverse-prod.grit.ucsb.edu."]
+}
+
 resource "aws_route53_record" "victorledgers-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "victorledgers.library.ucsb.edu."
