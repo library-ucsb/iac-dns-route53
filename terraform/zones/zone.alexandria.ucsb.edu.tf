@@ -2,12 +2,15 @@ locals {
   alex-zone_id = aws_route53_zone.r53_zones["alexandria-ucsb-edu"].zone_id
 }
 
-resource "aws_route53_record" "www-alexandria-ucsb-edu-CNAME" {
+resource "aws_route53_record" "www-alexandria-ucsb-edu-A" {
   zone_id = local.alex-zone_id
   name    = "www.alexandria.ucsb.edu."
-  type    = "CNAME"
-  ttl     = "10800"
-  records = ["lb-haproxy-legacy-001.library.ucsb.edu."]
+  type    = "A"
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "piru-alexandria-ucsb-edu-A" {
@@ -47,11 +50,14 @@ resource "aws_route53_record" "alexandria-ucsb-edu-MX" {
 }
 
 resource "aws_route53_record" "alexandria-ucsb-edu-A" {
-  zone_id = local.alex-zone_id
+zone_id = local.alex-zone_id
   name    = "alexandria.ucsb.edu."
   type    = "A"
-  ttl     = "10800"
-  records = ["128.111.87.17"]
+  alias {
+    name                   = data.aws_lb.dld-eks-ingress-nginx-v3.dns_name
+    zone_id                = data.aws_lb.dld-eks-ingress-nginx-v3.zone_id
+    evaluate_target_health = true
+  }
 }
 
 #  All *.legacy.library.ucsb.edu requests
