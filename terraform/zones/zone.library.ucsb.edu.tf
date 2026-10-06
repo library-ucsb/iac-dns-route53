@@ -550,6 +550,13 @@ zone_id = local.library-zone_id
   records = ["128.111.87.211"]
 }
 
+resource "aws_route53_record" "rds-library-ucsb-edu-A" {
+zone_id = local.library-zone_id
+  name    = "rds.library.ucsb.edu."
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["ucsb-library-research-data-services.github.io."]
+}
 resource "aws_route53_record" "filemaker-api-library-ucsb-edu-CNAME" {
 zone_id = local.library-zone_id
   name    = "filemaker-api.library.ucsb.edu."
